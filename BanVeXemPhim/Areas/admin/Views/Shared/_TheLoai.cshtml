@@ -1,0 +1,53 @@
+﻿
+<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Thể loại</h6>
+        <div class="table-responsive">
+            <i class="btn-action tl fa fa-plus bg-success mt-4" per="0" id="0"></i>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Mã thể loại</th>
+                        <th scope="col">Tên thể loại</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <script>
+                console.log('hello')
+            </script>
+            <button type="button" class="btn-openmodal" data-toggle="modal" data-target="#tl-modal" hidden>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="tl-modal" tabindex="-1" role="dialog" aria-labelledby="tl-modal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <b>Mã thể loại</b>
+                                <input type="text" id="ip-matl" readonly style="background-color:dimgrey">
+                            </div>
+                            <div class="input-group">
+                                <b>Tên thể loại</b>
+                                <input type="text" id="ip-tentl">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-tl-save">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

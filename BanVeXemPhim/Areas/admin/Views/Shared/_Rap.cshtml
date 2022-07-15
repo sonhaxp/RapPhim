@@ -1,0 +1,57 @@
+﻿<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Rạp phim</h6>
+        <div class="table-responsive">
+            <i class="btn-action rap fa fa-plus bg-success mt-4" per="0" id="0"></i>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Mã rạp</th>
+                        <th scope="col">Tên rạp</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <script>
+                console.log('hello')
+            </script>
+            <button type="button" class="btn-openmodal" data-toggle="modal" data-target="#rap-modal" hidden>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="rap-modal" tabindex="-1" role="dialog" aria-labelledby="rap-modal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <b>Mã Rạp</b>
+                                <input type="text" id="ip-marap" readonly style="background-color:darkgray">
+                            </div>
+                            <div class="input-group">
+                                <b>Tên rạp</b>
+                                <input type="text" id="ip-tenrap">
+                            </div>
+                            <div class="input-group">
+                                <b>Địa chỉ</b>
+                                <input type="text" id="ip-diachi">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-rap-save">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

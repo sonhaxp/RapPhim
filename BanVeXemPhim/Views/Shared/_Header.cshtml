@@ -1,0 +1,40 @@
+﻿<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=3219659421686983&autoLogAppEvents=1" nonce="9BAiHuyM"></script>
+<header class="header">
+    <a href="/trang-chu" class="header_logo">Cinema<span>plus</span></a>
+    <div class="header_search">
+        <input type="text" placeholder="Tìm kiếm" class="header_search-input">
+        <i class="fa-solid fa-magnifying-glass" onclick="timkiem()"></i>
+    </div>
+    <div class="header_menu">
+        <div class="header_login_fb" id="login_fb">
+            <fb:login-button scope="public_profile,email" perms="user_address,user_mobile_phone"
+                             onlogin="checkLoginState();">
+            </fb:login-button>
+        </div>
+        <div class="header_login" id="btn-showModel">
+            <i class="fa-solid fa-user"></i>
+            <span id="dang-nhap">Đăng nhập</span>
+        </div>
+        <div class="user">
+            <div class="header_user" id="user">
+                <img src="~/Content/img/user.png" alt="ảnh user" class="user-avatar">
+                <p class="user-name">Admin</p>
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <ul class="user-option">
+                <li class="user-option-item">
+                    <a href="javascript:;" id="goto_member">Tài Khoản</a>
+                </li>
+                <li class="user-option-item">
+                    <a href="javascript:;" id="logout">Thoát</a>
+                </li>
+            </ul>
+        </div>
+        <a href="#" class="header-language active">VN</a>
+        <a href="#" class="header-language">EN</a>
+        <div class="header_menu-btn" id="btn-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+</header>

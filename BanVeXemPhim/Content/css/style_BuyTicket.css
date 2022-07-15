@@ -1,0 +1,576 @@
+/* Css Grid */
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+    .grid.wide {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.col {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+/* mobile */
+
+.c-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+/* >= Tablet */
+@media (min-width: 740px) {
+    .row {
+        margin-left: -8px;
+        margin-right: -8px;
+    }
+
+    .col {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .m-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .l-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* PC medium resolution > */
+@media (min-width: 1113px) {
+    .row {
+        margin-left: -12px;
+        margin-right: -12px;
+    }
+
+    .col {
+        padding-left: 12px;
+    }
+
+    .l-4 {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+    }
+}
+
+
+/* Css Base */
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #555555;
+    --letter-spacing: 2px;
+    --primary-color: #f26b38;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.c18::after {
+    content: "C18";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c17::after {
+    content: "C17";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c16::after {
+    content: "C16";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c15::after {
+    content: "C15";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c14::after {
+    content: "C14";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c13::after {
+    content: "C13";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c12::after {
+    content: "C12";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c11::after {
+    content: "C11";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c10::after {
+    content: "C10";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c9::after {
+    content: "C9";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c8::after {
+    content: "C8";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c7::after {
+    content: "C7";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c6::after {
+    content: "C6";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c5::after {
+    content: "C5";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c4::after {
+    content: "C4";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c3::after {
+    content: "C3";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c2::after {
+    content: "C2";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c1::after {
+    content: "C1";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c18::after {
+    content: "C18";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.c0::after {
+    content: "C0";
+    display: flex;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #f26b38;
+    color: var(--white-color);
+}
+.mb-select-film {
+    margin-bottom: 40px;
+}
+
+/* CSS Main */
+.content_list-heading {
+    background-color: #f26b38;
+    text-align: center;
+    height: 40px;
+}
+
+.content_list-title {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--white-color);
+    line-height: 40px;
+}
+
+
+.content_list-item {
+    list-style: none;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    margin: 0;
+}
+
+.content_list-item-theater {
+    list-style: none;
+    border: 1px solid #e6e6e6;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+
+
+.content-item {
+    border-bottom: 1px solid #e6e6e6;
+}
+
+
+.content-link:hover {
+    background-color: #f5f5f5;
+}
+
+.content-link-info_name:hover {
+    color: var(--primary-color);
+}
+
+.content-item:last-child {
+    border-bottom: none;
+}
+
+.content-link {
+    text-decoration: none;
+    display: flex;
+    position: relative;
+    padding: 16px;
+}
+
+.content-link-img {
+    width: 60px;
+    object-fit: contain;
+}
+
+.content-link-info {
+    margin-left: 12px;
+}
+
+.content-link-info_name {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.content-link-info_description {
+    display: block;
+    margin-top: 8px;
+    font-size: 1.4rem;
+    color: #cab6af;
+}
+
+.content-link-address {
+    font-size: 1.4rem;
+    color: #808080;
+}
+
+    .content-link-address:hover {
+        color: var(--primary-color);
+    }
+
+.content_list-group-time {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+
+.content_list-group-item {
+    padding: 20px 15px;
+    border: 1px solid #e6e6e6;
+}
+
+
+.ng-binding {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 1.4;
+    margin: 0;
+    margin-bottom: 26px;
+}
+
+.showtimes-time-subtitles {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    line-height: 1.4;
+    margin: -2px 24px 0 0;
+}
+
+.showtimes-time {
+    display: flex;
+}
+
+.showtimes-list-wrapper {
+    flex-wrap: wrap;
+    display: flex;
+    flex: 1;
+}
+
+.showtimes-list_item {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    border: 1px solid #e6e6e6;
+    padding: 6px 12px;
+    margin: 0 10px 10px 0;
+}
+
+    .showtimes-list_item:hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        cursor:pointer;
+    }
+
+.select-theater-time {
+    list-style: none;
+    font-size: 1.6em;
+    color: #43464b;
+    height: 60px;
+    border: 1px solid #e6e6e6;
+    margin-top: 0;
+    line-height: 60px;
+}
+
+
+
+.film__heading {
+    margin-top: 20px;
+    color: #43464b;
+    font-size: 1.8rem;
+    font-weight: normal;
+    width: 100px;
+    border-bottom: 2px solid #f26b38;
+    padding-bottom: 10px;
+    z-index: 2;
+}
+
+hr {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 0px;
+}
+
+.select-theater.hide, .select-time.hide {
+    display: none;
+}
+
+.content_list-group-time.open, .content_list-item-theater.open {
+    display: block;
+}
+
+.active-color {
+    background-color: #e6e6e6;
+    color: #f26b38;
+}
+
+@media (max-width:739px) {
+    .content_list-item {
+        max-height: 228px;
+        overflow-y: auto;
+    }
+
+    .content-item {
+        flex-shrink: 0;
+    }
+
+    .Content_list-group {
+        max-height: 228px;
+        overflow-y: auto;
+    }
+
+    .content_list-group-item {
+        flex-shrink: 0;
+    }
+}

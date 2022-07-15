@@ -1,0 +1,1463 @@
+﻿<div class="sidebar pe-4 pb-3">
+    <nav class="navbar bg-light navbar-light">
+        <a href="/admin" class="navbar-brand mx-4 mb-3">
+            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Quản trị</h3>
+        </a>
+        <div class="d-flex align-items-center ms-4 mb-4">
+            <div class="position-relative">
+                <img class="rounded-circle" src="~/Areas/admin/img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+            </div>
+            <div class="ms-3">
+                <h6 class="mb-0" id="name-admin">Trường Sơn</h6>
+                <span>Admin</span>
+            </div>
+        </div>
+        <div class="navbar-nav w-100">
+            <a href="#trang-chu" class="nav-item nav-link active" id="trang-chu"><i class="fa fa-tachometer-alt me-2" id="trang-chu"></i>Trang chủ</a>
+            <a href="#rap" class="nav-item nav-link" id="rap"><i class="fa fa-th me-2"></i>Rạp</a>
+            <a href="#phong-chieu" class="nav-item nav-link" id="phong-chieu"><i class="fa fa-home me-2"></i>Phòng chiếu</a>
+            <a href="#suat-chieu" class="nav-item nav-link" id="suat-chieu"><i class="fa fa-calendar-minus me-2"></i>Suất chiếu</a>
+            <a href="#khach-hang" class="nav-item nav-link" id="khach-hang"><i class="fa fa-user me-2"></i>Khách hàng</a>
+            <a href="#do-an" class="nav-item nav-link" id="do-an"><i class="fa fa-hamburger me-2"></i>Đồ ăn</a>
+            <a href="#the-loai" class="nav-item nav-link" id="the-loai"><i class="fa fa-list me-2"></i>Thể loại</a>
+            <a href="#phim" class="nav-item nav-link" id="phim"><i class="fa fa-film me-2"></i>Phim</a>
+        </div>
+    </nav>
+</div>
+<script>
+    dateFormat = function (str) {
+        var s = str.split('T')
+        var t = s[0].split('-')
+        var output = t[2] + '/' + t[1] + '/' + t[0];
+        return output
+    }
+    dateFormat2 = function (str) {
+        var s = str.split('T')
+        return s[0]
+    }
+    var rap = 0;
+    var pc = 0;
+    var sc = 0;
+    var kh = 0;
+    var phim = 0;
+    var tl = 0;
+    var da = 0;
+    //trang chu
+    $(document).on("click", "#trang-chu", function () {
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/TrangChu",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                GetDS();
+                GetDSRap()
+                GetDSThang();
+                GetDSKH();
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+    });
+    //rap
+    $(document).on("click", "#rap", function () {
+        rap += 1;
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/RapPhim",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                if (rap == 1) {
+                GetListRap = function () {
+                    $.ajax({
+                        url: "/api/rap",
+                        method: "GET",
+                        contentType: "json",
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (res) {
+                            var length = res.length;
+                            var tableHtml = '';
+                            for (var i = 0; i < length; i++) {
+                                tableHtml = tableHtml + "<tr>";
+                                tableHtml = tableHtml + '<th scope="row">' + i + '</th>';
+                                tableHtml = tableHtml + '<td>' + res[i].MaRap + '</td>';
+                                tableHtml = tableHtml + '<td>' + res[i].TenRap + '</td>';
+                                tableHtml = tableHtml + '<td>' + res[i].DiaChi + '</td>';
+                                tableHtml = tableHtml + "<td>" + "<i class='fa fa-edit btn-action rap mr-3 bg-primary' per='1' id='" + res[i].MaRap + "'></i>";
+                                tableHtml = tableHtml + "<i class='fa fa-trash btn-action rap bg-danger' per='2' id='" + res[i].MaRap + "'></i>" + "</td>";
+                                tableHtml = tableHtml + "</tr>";
+                            }
+                            $("tbody").html(tableHtml);
+                        },
+                        error: function () {
+                            console.log("Load api get thất bại");
+                        }
+                    });
+                }
+                
+                    $(document).on("click", ".btn-action.rap", function () {
+                        var per = $(this).attr("per");
+                        var id = $(this).attr("id");
+                        GetRap = function (id) {
+                            $.ajax({
+                                url: "/api/rap?marap=" + id,
+                                method: "GET",
+                                contentType: "json",
+                                crossDomain: true,
+                                dataType: 'json',
+                                success: function (res) {
+                                    //Đặt giá trị các input
+                                    $("#ip-marap").val(res.MaRap);
+                                    $("#ip-tenrap").val(res.TenRap);
+                                    $("#ip-diachi").val(res.DiaChi);
+                                },
+                                error: function () {
+                                    console.log("Load api get thất bại");
+                                }
+                            });
+                        }
+                        //Xóa
+                        if (per == 2) {
+                            //Chấp nhận xóa
+                            /*DeleteNhanVien(id);*/
+                            alert('Hiện tại chưa có chức năng này');
+                            console.log('Rap')
+                        }
+                        //Thêm,sửa thì bật modal
+                        else {
+                            $(".btn-openmodal").trigger("click");
+                            $(".btn-rap-save").attr("per", per); //đặt per cho nút lưu để xem là thêm hay sửa
+                            //Thêm
+                            if (per == 0) {
+                                $(".modal-title").text("Thêm Rạp");
+                                //Reset các input
+                                $("#ip-marap").val("");
+                                $("#ip-tenrap").val("");
+                                $("#ip-diachi").val("");
+                            }
+                            //Sửa
+                            else {
+                                $(".modal-title").text("Sửa rạp");
+                                GetRap(id);
+                            }
+                        }
+
+                        //Set up title modal tương ứng
+                    });
+                    //Sự kiện nút lưu
+                    $(document).on("click", ".btn-rap-save", function () {
+                        var per = $(this).attr("per");
+                        var id = $("#ip-marap").val();
+                        var name = $("#ip-tenrap").val();
+                        var address = $("#ip-diachi").val();
+                        //Validate input rỗng
+                        if (name == "" || address == "") {
+                            /*toastr.error("Thông tin nhập chưa đủ", "Thông báo");*/
+                            alert('Thông tin nhập chưa đủ')
+                        } else {
+                            if (per == 0) {
+                                $.ajax({
+                                    url: "/api/rap?ten=" + name + "&diachi=" + address,
+                                    method: "POST",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListRap();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã rạp không hợp lệ");
+                                            console.log('Rap')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                        console.log('Rap')
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "/api/rap?ma=" + id + "&ten=" + name + "&diachi=" + address,
+                                    method: "PUT",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListRap();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã rạp không hợp lệ");
+                                            console.log('Rap')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                        console.log('Rap')
+                                    }
+                                });
+                            }
+                        }
+                    });    
+                } GetListRap();
+
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+
+    });
+    //phong chieu
+    $(document).on("click", "#phong-chieu", function () {
+        pc += 1;
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/PhongChieu",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                if (pc == 1) {
+                    GetListPC = function () {
+                        $.ajax({
+                            url: "/api/phongchieu",
+                            method: "GET",
+                            contentType: "json",
+                            crossDomain: true,
+                            dataType: 'json',
+                            success: function (res) {
+                                var length = res.length;
+                                var tableHtml = '';
+                                for (var i = 0; i < length; i++) {
+                                    tableHtml = tableHtml + "<tr>";
+                                    tableHtml = tableHtml + '<th scope="row">' + i + '</th>';
+                                    tableHtml = tableHtml + '<td>' + res[i].MaPhongChieu + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].TenPhong + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].soluonghang + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].soluongcot + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].TenRap + '</td>';
+                                    tableHtml = tableHtml + "<td>" + "<i class='fa fa-edit btn-action pc mr-3 bg-primary' per='1' id='" + res[i].MaPhongChieu + "'></i>";
+                                    tableHtml = tableHtml + "<i class='fa fa-trash btn-action pc bg-danger' per='2' id='" + res[i].MaPhongChieu + "'></i>" + "</td>";
+                                    tableHtml = tableHtml + "</tr>";
+                                }
+                                $("tbody").html(tableHtml);
+                            },
+                            error: function () {
+                                console.log("Load api get thất bại");
+                            }
+                        });
+                    }
+                    $(document).on("click", ".btn-action.pc", function () {
+                        var per = $(this).attr("per");
+                        var id = $(this).attr("id");
+                        GetPC = function (id) {
+                            $.ajax({
+                                url: "/api/phongchieu?id=" + id,
+                                method: "GET",
+                                contentType: "json",
+                                crossDomain: true,
+                                dataType: 'json',
+                                success: function (res) {
+                                    //Đặt giá trị các input
+                                    $("#ip-maphongchieu").val(res.MaPhongChieu);
+                                    $("#ip-tenphongchieu").val(res.TenPhong);
+                                    $("#ip-row").val(res.soluonghang);
+                                    $("#ip-column").val(res.soluongcot);
+                                    $("#select-rap option[value = " + res.MaRap + "]")[0].selected = true;
+                                },
+                                error: function () {
+                                    console.log("Load api get thất bại");
+                                }
+                            });
+                        }
+                        //Xóa
+                        if (per == 2) {
+                            //Chấp nhận xóa
+                            /*DeleteNhanVien(id);*/
+                            alert('Hiện tại chưa có chức năng này');
+                        }
+                        //Thêm,sửa thì bật modal
+                        else {
+                            $(".btn-openmodal").trigger("click");
+                            $(".btn-phongchieu-save").attr("per", per); //đặt per cho nút lưu để xem là thêm hay sửa
+                            //Thêm
+                            if (per == 0) {
+                                $(".modal-title").text("Thêm phòng chiếu");
+                                //Reset các input
+                                $("#ip-maphongchieu").val("");
+                                $("#ip-tenphongchieu").val("");
+                                $("#ip-row").val("");
+                                $("#ip-column").val("");
+                            }
+                            //Sửa
+                            else {
+                                $(".modal-title").text("Sửa phòng chiếu");
+                                GetPC(id);
+                            }
+                        }
+
+                        //Set up title modal tương ứng
+                    });
+                    //Sự kiện nút lưu
+                    $(document).on("click", ".btn-phongchieu-save", function () {
+                        var per = $(this).attr("per");
+                        var id = $("#ip-maphongchieu").val();
+                        var name = $("#ip-tenphongchieu").val();
+                        var row = $("#ip-row").val();
+                        var column = $("#ip-column").val();
+                        var marap = $('#select-rap').val()
+                        //Validate input rỗng
+                        if (name == "" || row == "" || column == "") {
+                            /*toastr.error("Thông tin nhập chưa đủ", "Thông báo");*/
+                            alert('Thông tin nhập chưa đủ')
+                        } else {
+                            if (per == 0) {
+                                $.ajax({
+                                    url: "/api/phongchieu?ten=" + name + "&hang=" + row + "&cot=" + column + "&marap=" + marap,
+                                    method: "POST",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListPC();
+                                            }, 500);
+                                        } else {
+                                            alert("Lỗi");
+                                            console.log('PC')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "/api/phongchieu?ma=" + id + "&ten=" + name + "&hang=" + row + "&cot=" + column + "&marap=" + marap,
+                                    method: "PUT",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click');
+                                                GetListPC();
+                                            }, 500);
+                                        } else {
+                                            alert("Lỗi");
+                                            console.log('PC')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+                GetListPC()
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+    });
+    //suat chieu
+    $(document).on("click", "#suat-chieu", function () {
+        sc += 1;
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/SuatChieu",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                $(document).on("change", "#select-rap", function () {
+                    $.ajax({
+                        url: "/api/phongchieu?marap=" + $(this).val(),
+                        method: "GET",
+                        contentType: "json",
+                        crossDomain: true,
+                        dataType: 'json',
+                        success: function (res) {
+                            $('#select-phong').empty();
+                            table = '';
+                            for (var i = 0; i < res.length; i++) {
+                                $("#select-phong").append('<option value="' + res[i].MaPhongChieu + '">' + res[i].TenPhong + '</option>');
+                            }
+                        },
+                        error: function () {
+                            console.log("Load api get thất bại");
+                        }
+                    });
+                });
+                if (sc == 1) {
+                    GetListSC = function () {
+                        $.ajax({
+                            url: "/api/suatchieu",
+                            method: "GET",
+                            contentType: "json",
+                            crossDomain: true,
+                            dataType: 'json',
+                            success: function (res) {
+                                var length = res.length;
+                                var tableHtml = '';
+                                for (var i = 0; i < length; i++) {
+                                    tableHtml = tableHtml + "<tr>";
+                                    tableHtml = tableHtml + '<th scope="row">' + i + '</th>';
+                                    tableHtml = tableHtml + '<td>' + res[i].MaSuatChieu + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].GioChieu + '</td>';
+                                    tableHtml = tableHtml + '<td>' + dateFormat(res[i].ThoiGianChieu) + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].TenPhim + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].TenPhong + '</td>';
+                                    tableHtml = tableHtml + "<td>" + "<i class='fa fa-edit btn-action sc mr-3 bg-primary' per='1' id='" + res[i].MaSuatChieu + "'></i>";
+                                    tableHtml = tableHtml + "<i class='fa fa-trash btn-action sc bg-danger' per='2' id='" + res[i].MaSuatChieu + "'></i>" + "</td>";
+                                    tableHtml = tableHtml + "</tr>";
+                                }
+                                $("tbody").html(tableHtml);
+                            },
+                            error: function () {
+                                console.log('SC')
+                                console.log("Load api get thất bại");
+                            }
+                        });
+                    }
+                    $(document).on("click", ".btn-action.sc", function () {
+                        var per = $(this).attr("per");
+                        var id = $(this).attr("id");
+                        GetSC = function (id) {
+                            $.ajax({
+                                url: "/api/suatchieu?ma=" + id,
+                                method: "GET",
+                                contentType: "json",
+                                crossDomain: true,
+                                dataType: 'json',
+                                success: function (res) {
+                                    //Đặt giá trị các input
+                                    $("#ip-masuatchieu").val(res.MaSuatChieu);
+                                    $("#ip-giochieu").val(res.GioChieu);
+                                    $("#ip-thoigianchieu").val(dateFormat2(res.ThoiGianChieu));
+                                    $("#select-phim option[value = " + res.MaPhim + "]")[0].selected = true;
+                                    $("#select-rap option[value = " + res.MaRap + "]")[0].selected = true;
+                                    $.ajax({
+                                        url: "/api/phongchieu?marap=" + res.MaRap,
+                                        method: "GET",
+                                        contentType: "json",
+                                        crossDomain: true,
+                                        dataType: 'json',
+                                        success: function (res) {
+                                            $('#select-phong').empty();
+                                            table = '';
+                                            for (var i = 0; i < res.length; i++) {
+                                                $("#select-phong").append('<option value="' + res[i].MaPhongChieu + '">' + res[i].TenPhong + '</option>');
+                                            }
+                                            $("#select-phong option[value = " + res.MaPhongChieu + "]")[0].selected = true;
+                                        },
+                                        error: function () {
+                                            console.log("Load api get thất bại");
+                                        }
+                                    });
+
+                                },
+                                error: function () {
+                                    console.log("Load api get thất bại");
+                                }
+                            });
+                        }
+                        //Xóa
+                        if (per == 2) {
+                            //Chấp nhận xóa
+                            /*DeleteNhanVien(id);*/
+                            alert('Hiện tại chưa có chức năng này');
+                            console.log('SC')
+                        }
+                        //Thêm,sửa thì bật modal
+                        else {
+                            $(".btn-openmodal").trigger("click");
+                            $(".btn-suatchieu-save").attr("per", per); //đặt per cho nút lưu để xem là thêm hay sửa
+                            //Thêm
+                            if (per == 0) {
+                                $(".modal-title").text("Thêm suất chiếu");
+                                //Reset các input
+                                $("#ip-masuatchieu").val("");
+                                $("#ip-giochieu").val("");
+                                $("#ip-thoigianchieu").val("");
+                            }
+                            //Sửa
+                            else {
+                                $(".modal-title").text("Sửa suất chiếu");
+                                GetSC(id);
+                            }
+                        }
+
+                    });
+                    //Sự kiện nút lưu
+                    $(document).on("click", ".btn-suatchieu-save", function () {
+                        var per = $(this).attr("per");
+                        var id = $("#ip-masuatchieu").val();
+                        var gio = $("#ip-giochieu").val();
+                        var thoigianchieu = $("#ip-thoigianchieu").val();
+                        var phim = $("#select-phim").val();
+                        var phong = $('#select-phong').val()
+                        //Validate input rỗng
+                        if (gio == "" || thoigianchieu == "" || phim == "" || phong == "") {
+                            /*toastr.error("Thông tin nhập chưa đủ", "Thông báo");*/
+                            alert('Thông tin nhập chưa đủ')
+                        } else {
+                            if (per == 0) {
+                                $.ajax({
+                                    url: "/api/suatchieu?thoigianchieu=" + thoigianchieu + "&maphim=" + phim + "&giochieu=" + gio + "&maphongchieu=" + phong,
+                                    method: "POST",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListSC();
+                                            }, 500);
+                                        } else {
+                                            alert("Lỗi");
+                                            console.log('SC')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "/api/suatchieu?ma=" + id + "&thoigianchieu=" + thoigianchieu + "&maphim=" + phim + "&giochieu=" + gio + "&maphongchieu=" + phong,
+                                    method: "PUT",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListSC();
+                                            }, 500);
+                                        } else {
+                                            alert("Lỗi");
+                                            console.log('SC')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+                GetListSC();
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+    });
+    //khach hang
+    $(document).on("click", "#khach-hang", function () {
+        kh +=1;
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/KhachHang",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                $(document).on("click", ".btn.btn-primary.btn-paging-kh", function () {
+                    var page = $(this).text();
+                    var t = parseInt(page)
+                    $('#btn-active').css("background-color", "#007bff");
+                    $('#btn-active').removeAttr("id");
+                    $(this).attr('id', 'btn-active');
+                    $(this).css("background-color", "tomato");
+                    $.ajax({
+                        url: "/api/thanhvien?page=" + page,
+                        method: "GET",
+                        contentType: "json",
+                        success: function (res) {
+                            console.log(res)
+                            var length = res.length;
+                            var tableHtml = '';
+                            for (var i = 0; i < length; i++) {
+                                var s = (t - 1) * 10 + (i + 1)
+                                tableHtml = tableHtml + "<tr>";
+                                tableHtml = tableHtml + '<th scope="row">' + s + '</th>';
+                                tableHtml = tableHtml + '<td>' + res[i].MaKhachHang + '</td>';
+                                tableHtml = tableHtml + '<td>' + res[i].HoTen + '</td>';
+                                tableHtml = tableHtml + '<td>' + res[i].SoDienThoai + '</td>';
+                                tableHtml = tableHtml + '<td>' + res[i].Email + '</td>';
+                                tableHtml = tableHtml + '<td>' + res[i].DiaChi + '</td>';
+                                tableHtml = tableHtml + '<td>' + dateFormat(res[i].NgaySinh) + '</td>';
+                                tableHtml = tableHtml + '<td>' + res[i].GioiTinh + '</td>';
+                                tableHtml = tableHtml + "<td>" + "<i class='fa fa-edit btn-action kh mr-3 bg-primary' per='1' id='" + res[i].MaKhachHang + "'></i>";
+                                tableHtml = tableHtml + "<i class='fa fa-trash btn-action kh bg-danger' per='2' id='" + res[i].MaKhachHang + "'></i>" + "</td>";
+                                tableHtml = tableHtml + "</tr>";
+                            }
+                            $("tbody").html(tableHtml);
+                        }
+                    });
+                });
+                if (kh == 1) {
+                    GetListKH = function () {
+                        $.ajax({
+                            url: "/api/thanhvien?sl=10",
+                            method: "GET",
+                            contentType: "json",
+                            crossDomain: true,
+                            dataType: 'json',
+                            success: function (res) {
+                                var length = res.length;
+                                var tableHtml = '';
+                                for (var i = 0; i < length; i++) {
+                                    tableHtml = tableHtml + "<tr>";
+                                    tableHtml = tableHtml + '<th scope="row">' + (i+1) + '</th>';
+                                    tableHtml = tableHtml + '<td>' + res[i].MaKhachHang + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].HoTen + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].SoDienThoai + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].Email + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].DiaChi + '</td>';
+                                    tableHtml = tableHtml + '<td>' + dateFormat(res[i].NgaySinh) + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].GioiTinh + '</td>';
+                                    tableHtml = tableHtml + "<td>" + "<i class='fa fa-edit btn-action kh mr-3 bg-primary' per='1' id='" + res[i].MaKhachHang + "'></i>";
+                                    tableHtml = tableHtml + "<i class='fa fa-trash btn-action kh bg-danger' per='2' id='" + res[i].MaKhachHang + "'></i>" + "</td>";
+                                    tableHtml = tableHtml + "</tr>";
+                                }
+                                $("tbody").html(tableHtml);
+                            },
+                            error: function () {
+                                console.log("Load api get thất bại");
+                            }
+                        });
+                    }
+                    $(document).on("click", ".btn-action.kh", function () {
+                        var per = $(this).attr("per");
+                        var id = $(this).attr("id");
+                        GetKH = function (id) {
+                            $.ajax({
+                                url: "/api/thanhvien?ma=" + id,
+                                method: "GET",
+                                contentType: "json",
+                                crossDomain: true,
+                                dataType: 'json',
+                                success: function (res) {
+                                    //Đặt giá trị các input
+                                    $("#ip-makh").val(res.MaKhachHang);
+                                    $("#ip-tenkh").val(res.HoTen);
+                                    $("#ip-dc").val(res.DiaChi);
+                                    $("#ip-dt").val(res.SoDienThoai);
+                                    $("#ip-email").val(res.Email);
+                                    $(".model_register-sex").val(res.GioiTinh == "Nam" ? "1" : "0");
+                                    $("#ip-ns").val(dateFormat2(res.NgaySinh));
+                                },
+                                error: function () {
+                                    console.log("Load api get thất bại");
+                                }
+                            });
+                        }
+                        //Xóa
+                        if (per == 2) {
+                            //Chấp nhận xóa
+                            /*DeleteNhanVien(id);*/
+                            console.log('KH')
+                            alert('Hiện tại chưa có chức năng này');
+                        }
+                        //Thêm,sửa thì bật modal
+                        else {
+                            $(".btn-openmodal").trigger("click");
+                            $(".btn-khachhang-save").attr("per", per); //đặt per cho nút lưu để xem là thêm hay sửa
+                            //Thêm
+                            if (per == 0) {
+                                $(".modal-title").text("Thêm khách hàng");
+                                //Reset các input
+                                $("#ip-makh").val("");
+                                $("#ip-tenkh").val("");
+                                $("#ip-dc").val("");
+                                $("#ip-dt").val("");
+                                $("#ip-email").val("");
+                                $(".model_register-sex option[value = '-1']")[0].selected = true;
+                                $("#ip-ns").val("");
+                            }
+                            //Sửa
+                            else {
+                                $(".modal-title").text("Sửa khách hàng");
+                                GetKH(id);
+                            }
+                        }
+                    });
+                    //Sự kiện nút lưu
+                    $(document).on("click", ".btn-khachhang-save", function () {
+                        var per = $(this).attr("per");
+                        var id = $("#ip-makh").val();
+                        var name = $("#ip-tenkh").val();
+                        var address = $("#ip-dc").val();
+                        var phoneNumber = $("#ip-dt").val();
+                        var email = $('#ip-email').val();
+                        var gioitinh = $('.model_register-sex').val();
+                        var ngaySinh = $('#ip-ns').val();
+                        //Validate input rỗng
+                        if (name == "" || address == "" || phoneNumber == "" || email == "" || gioitinh == "" || ngaySinh == "") {
+                            /*toastr.error("Thông tin nhập chưa đủ", "Thông báo");*/
+                            alert('Thông tin nhập chưa đủ')
+                        } else {
+                            if (per == 0) {
+                                $.ajax({
+                                    url: "/api/thanhvien?hoten=" + name + "&diachi=" + address + "&sdt=" + phoneNumber + "&email=" + email + "&ngaysinh=" + ngaySinh + "&gioitinh=" + gioitinh,
+                                    method: "POST",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            $.ajax({
+                                                url: "/api/taikhoan?username=" + email + "&password=" + 'Hello123' + "&quyen=" + 'user',
+                                                method: "POST",
+                                                contentType: "json",
+                                                crossDomain: true,
+                                                dataType: 'json',
+                                                success: function (res) {
+
+                                                },
+                                                error: function () {
+                                                    alert("Thao tác thất bại");
+                                                }
+                                            });
+
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListKH();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã kh không hợp lệ");
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "/api/thanhvien?ma=" + id + "&hoten=" + name + "&diachi=" + address + "&sdt=" + phoneNumber + "&email=" + email + "&ngaysinh=" + ngaySinh + "&gioitinh=" + gioitinh,
+                                    method: "PUT",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListKH();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã kh không hợp lệ");
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                    }
+                                });
+                            }
+                        }
+                    });
+                } GetListKH();
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+    });
+    //doan
+    $(document).on("click", "#do-an", function () {
+        da+=1
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/DoAn",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                if (da == 1) {
+                    GetListDA = function () {
+                        $.ajax({
+                            url: "/api/doan",
+                            method: "GET",
+                            contentType: "json",
+                            crossDomain: true,
+                            dataType: 'json',
+                            success: function (res) {
+                                var length = res.length;
+                                var tableHtml = '';
+                                for (var i = 0; i < length; i++) {
+                                    tableHtml = tableHtml + "<tr>";
+                                    tableHtml = tableHtml + '<th scope="row">' + i + '</th>';
+                                    tableHtml = tableHtml + '<td>' + res[i].MaDoAn + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].TenDoAn + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].GiaBan + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].Anh + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].ChiTiet + '</td>';
+                                    tableHtml = tableHtml + "<td>" + "<i class='fa fa-edit btn-action da mr-3 bg-primary' per='1' id='" + res[i].MaDoAn + "'></i>";
+                                    tableHtml = tableHtml + "<i class='fa fa-trash btn-action da bg-danger' per='2' id='" + res[i].MaDoAn + "'></i>" + "</td>";
+                                    tableHtml = tableHtml + "</tr>";
+                                }
+                                $("tbody").html(tableHtml);
+                            },
+                            error: function () {
+                                console.log("Load api get thất bại");
+                            }
+                        });
+                    }
+
+                    $(document).on("click", ".btn-action.da", function () {
+                        var per = $(this).attr("per");
+                        var id = $(this).attr("id");
+                        GetDA = function (id) {
+                            $.ajax({
+                                url: "/api/doan?id=" + id,
+                                method: "GET",
+                                contentType: "json",
+                                crossDomain: true,
+                                dataType: 'json',
+                                success: function (res) {
+                                    //Đặt giá trị các input
+                                    $("#ip-mada").val(res.MaDoAn);
+                                    $("#ip-tenda").val(res.TenDoAn);
+                                    $("#ip-giada").val(res.GiaBan);
+                                    $("#ip-anhda").val(res.Anh);
+                                    $("#ip-ctda").val(res.ChiTiet);
+                                },
+                                error: function () {
+                                    console.log("Load api get thất bại");
+                                }
+                            });
+                        }
+                        //Xóa
+                        if (per == 2) {
+                            //Chấp nhận xóa
+                            /*DeleteNhanVien(id);*/
+                            alert('Hiện tại chưa có chức năng này');
+                            console.log('Do an')
+                        }
+                        //Thêm,sửa thì bật modal
+                        else {
+                            $(".btn-openmodal").trigger("click");
+                            $(".btn-da-save").attr("per", per); //đặt per cho nút lưu để xem là thêm hay sửa
+                            //Thêm
+                            if (per == 0) {
+                                $(".modal-title").text("Thêm Đồ ăn");
+                                //Reset các input
+                                $("#ip-mada").val("");
+                                $("#ip-tenda").val("");
+                                $("#ip-giada").val("");
+                                $("#ip-ctda").val("");
+                                $("#ip-anhda").val("");
+                            }
+                            //Sửa
+                            else {
+                                $(".modal-title").text("Sửa Đồ ăn");
+                                GetDA(id);
+                            }
+                        }
+
+                        //Set up title modal tương ứng
+                    });
+                    //Sự kiện nút lưu
+                    $(document).on("click", ".btn-da-save", function () {
+                        var per = $(this).attr("per");
+                        var id = $("#ip-mada").val();
+                        var name = $("#ip-tenda").val();
+                        var gia = $("#ip-giada").val();
+                        var anh = $("#ip-anhda").val();
+                        var chitiet = $("#ip-ctda").val();
+                        //Validate input rỗng
+                        if (name == "" || gia == "" || anh == "" || chitiet == "") {
+                            /*toastr.error("Thông tin nhập chưa đủ", "Thông báo");*/
+                            alert('Thông tin nhập chưa đủ')
+                        } else {
+                            if (per == 0) {
+                                $.ajax({
+                                    url: "/api/doan?ten=" + name + "&gia=" + gia + "&anh=" + anh + "&chitiet=" + chitiet,
+                                    method: "POST",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetDA();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã DA không hợp lệ");
+                                            console.log('DA')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                        console.log('DA')
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "/api/doan?ma=" + id + "&ten=" + name + "&gia=" + gia + "&anh=" + anh + "&chitiet=" + chitiet,
+                                    method: "PUT",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListDA();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã đồ ăn không hợp lệ");
+                                            console.log('TL')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                        console.log('DA')
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+                GetListDA();
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+    });
+    //theloai
+    $(document).on("click", "#the-loai", function () {
+        tl += 1;
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/TheLoai",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                if (tl == 1) {
+                    GetListTheLoai = function () {
+                        $.ajax({
+                            url: "/api/theloai",
+                            method: "GET",
+                            contentType: "json",
+                            crossDomain: true,
+                            dataType: 'json',
+                            success: function (res) {
+                                var length = res.length;
+                                var tableHtml = '';
+                                for (var i = 0; i < length; i++) {
+                                    tableHtml = tableHtml + "<tr>";
+                                    tableHtml = tableHtml + '<th scope="row">' + i + '</th>';
+                                    tableHtml = tableHtml + '<td>' + res[i].MaTheLoai + '</td>';
+                                    tableHtml = tableHtml + '<td>' + res[i].TenTheLoai + '</td>';
+                                    tableHtml = tableHtml + "<td>" + "<i class='fa fa-edit btn-action tl mr-3 bg-primary' per='1' id='" + res[i].MaTheLoai + "'></i>";
+                                    tableHtml = tableHtml + "<i class='fa fa-trash btn-action tl bg-danger' per='2' id='" + res[i].MaTheLoai + "'></i>" + "</td>";
+                                    tableHtml = tableHtml + "</tr>";
+                                }
+                                $("tbody").html(tableHtml);
+                            },
+                            error: function () {
+                                console.log("Load api get thất bại");
+                            }
+                        });
+                    }
+                    $(document).on("click", ".btn-action.tl", function () {
+                        var per = $(this).attr("per");
+                        var id = $(this).attr("id");
+                        GetTL = function (id) {
+                            $.ajax({
+                                url: "/api/theloai?id=" + id,
+                                method: "GET",
+                                contentType: "json",
+                                crossDomain: true,
+                                dataType: 'json',
+                                success: function (res) {
+                                    //Đặt giá trị các input
+                                    $("#ip-matl").val(res.MaTheLoai);
+                                    $("#ip-tentl").val(res.TenTheLoai);
+                                },
+                                error: function () {
+                                    console.log("Load api get thất bại");
+                                }
+                            });
+                        }
+                        //Xóa
+                        if (per == 2) {
+                            //Chấp nhận xóa
+                            /*DeleteNhanVien(id);*/
+                            alert('Hiện tại chưa có chức năng này');
+                            console.log('Rap')
+                        }
+                        //Thêm,sửa thì bật modal
+                        else {
+                            $(".btn-openmodal").trigger("click");
+                            $(".btn-tl-save").attr("per", per); //đặt per cho nút lưu để xem là thêm hay sửa
+                            //Thêm
+                            if (per == 0) {
+                                $(".modal-title").text("Thêm Thể Loại");
+                                //Reset các input
+                                $("#ip-matl").val("");
+                                $("#ip-tentl").val("");
+                            }
+                            //Sửa
+                            else {
+                                $(".modal-title").text("Sửa Thể Loại");
+                                GetTL(id);
+                            }
+                        }
+
+                        //Set up title modal tương ứng
+                    });
+                    //Sự kiện nút lưu
+                    $(document).on("click", ".btn-tl-save", function () {
+                        var per = $(this).attr("per");
+                        var id = $("#ip-matl").val();
+                        var name = $("#ip-tentl").val();
+                        //Validate input rỗng
+                        if (name == "" ) {
+                            /*toastr.error("Thông tin nhập chưa đủ", "Thông báo");*/
+                            alert('Thông tin nhập chưa đủ')
+                        } else {
+                            if (per == 0) {
+                                $.ajax({
+                                    url: "/api/theloai?name=" + name,
+                                    method: "POST",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListTheLoai();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã TL không hợp lệ");
+                                            console.log('TL')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                        console.log('TL')
+                                    }
+                                });
+                            } else {
+                                $.ajax({
+                                    url: "/api/theloai?id=" + id + "&name=" + name,
+                                    method: "PUT",
+                                    contentType: "json",
+                                    crossDomain: true,
+                                    dataType: 'json',
+                                    success: function (res) {
+                                        if (res == true) {
+                                            alert("Thao tác thành công");
+                                            //load lại
+                                            setTimeout(function () {
+                                                $(".modal-header button").trigger('click'); //Đóng modal
+                                                GetListTheLoai();
+                                            }, 500);
+                                        } else {
+                                            alert("Mã rạp không hợp lệ");
+                                            console.log('TL')
+                                        }
+                                    },
+                                    error: function () {
+                                        alert("Thao tác thất bại");
+                                        console.log('TL')
+                                    }
+                                });
+                            }
+                        }
+                    });
+                }
+                GetListTheLoai();
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+    });
+    //phim
+    function loadPhim() {
+        $.ajax({
+            url: "/api/phim?page=1",
+            method: "GET",
+            contentType: "json",
+            success: function (res) {
+                let html = []
+                res.forEach((elem, index) => {
+                    let time = new Date(elem.NgayCongChieu)
+                    let tmp = `<tr>
+                                       <td> ${index + 1}</td>
+                                       <td> ${elem.TenPhim}</td>
+                                       <td> ${time.toLocaleDateString('vi-VN')}</td>
+                                       <td> ${elem.TrangThai}</td>
+                                       <td> ${elem.TenTheLoai}</td>
+                                       <td> <a href = "/Content/img/${elem.Anh}">${elem.Anh}</a></td>
+                                       <td> ${elem.Tuoi}</td>
+                                       <td><i data-toggle="modal" data-target="#phim-modal" class='fa fa-edit btn-action mr-3 bg-primary' data-action='1' data-id='${elem.MaPhim}'></i>
+                                       </td>
+                                    </tr>`
+                    html[index] = tmp
+                })
+                $('tbody').html(html.join(''))
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        })
+    }
+    $(document).on("click", "#phim", function () {
+        $('.nav-item.nav-link.active').removeClass("active")
+        $(this).addClass("active")
+        $.ajax({
+            url: "/admin/HomeAdmin/Phim",
+            success: function (response) {
+                document.getElementById('content-main').innerHTML = response;
+                $(document).on("click", ".btn.btn-primary.btn-paging", function () {
+                    var i = $(this).text();
+                    $('#btn-active').css("background-color", "#007bff");
+                    $('#btn-active').removeAttr("id");
+                    $(this).attr('id', 'btn-active');
+                    $(this).css("background-color", "tomato");
+                    $.ajax({
+                        url: "/api/phim?page=" + i,
+                        method: "GET",
+                        contentType: "json",
+                        success: function (res) {
+                            let html = []
+                            res.forEach((elem, index) => {
+                                let time = new Date(elem.NgayCongChieu)
+                                let tmp = `<tr>
+                                       <td> ${(i - 1) * 10 + index + 1}</td>
+                                       <td> ${elem.TenPhim}</td>
+                                       <td> ${time.toLocaleDateString('vi-VN')}</td>
+                                       <td> ${elem.TrangThai}</td>
+                                       <td> ${elem.TenTheLoai}</td>
+                                       <td> <a href = "/Content/img/${elem.Anh}">${elem.Anh}</a></td>
+                                       <td> ${elem.Tuoi}</td>
+                                       <td><i data-toggle="modal" data-target="#phim-modal" class='fa fa-edit btn-action phim mr-3 bg-primary' data-action='1' data-id='${elem.MaPhim}'></i>
+                                       </td>
+                                    </tr>`
+                                html[index] = tmp
+                            })
+                            $('tbody').html(html.join(''))
+
+                            let btnUpdate = document.querySelectorAll('.btn-action')
+                            dangKyValidate()
+                            btnUpdate.forEach(elem => {
+                                elem.addEventListener('click', (function (e) {
+                                    resetInput()
+                                    if (elem.dataset.action == 1) {
+                                        let idPhim = elem.dataset.id
+                                        $('.modal-title').text("Sửa phim");
+                                        layDuLieuPhimId(idPhim)
+                                        $('#btn-submit').click(function (e) {
+                                            validateDuLieu(e, 1, idPhim)
+                                        })
+                                    }
+                                    else if (elem.dataset.action == 0) {
+                                        $('.modal-title').text("Thêm phim")
+                                        $('#btn-submit').click(function (e) {
+                                            validateDuLieu(e, 0)
+                                        })
+                                    }
+                                }))
+                            })
+                            $.ajax({
+                                url: "/api/theloai",
+                                method: "GET",
+                                success: function (res) {
+                                    let s = []
+                                    res.forEach(elem => {
+                                        let temp = `<option value="${elem.MaTheLoai}">${elem.TenTheLoai}</option>`
+                                        s.push(temp)
+                                    })
+                                    $('#ip-theloai').html(s.join(''))
+                                }
+                            })
+                        }
+                    });
+                });
+                $.ajax({
+                    url: "/api/phim?page=1",
+                    method: "GET",
+                    contentType: "json",
+                    success: function (res) {
+                        let html = []
+                        res.forEach((elem, index) => {
+                            let time = new Date(elem.NgayCongChieu)
+                            let tmp = `<tr>
+                                       <td> ${index + 1}</td>
+                                       <td> ${elem.TenPhim}</td>
+                                       <td> ${time.toLocaleDateString('vi-VN')}</td>
+                                       <td> ${elem.TrangThai}</td>
+                                       <td> ${elem.TenTheLoai}</td>
+                                       <td> <a href = "/Content/img/${elem.Anh}">${elem.Anh}</a></td>
+                                       <td> ${elem.Tuoi}</td>
+                                       <td><i data-toggle="modal" data-target="#phim-modal" class='fa fa-edit btn-action phim mr-3 bg-primary' data-action='1' data-id='${elem.MaPhim}'></i>
+                                       </td>
+                                    </tr>`
+                            html[index] = tmp
+                        })
+                        $('tbody').html(html.join(''))
+
+                        let btnUpdate = document.querySelectorAll('.btn-action')
+                        dangKyValidate()
+                        btnUpdate.forEach(elem => {
+                            elem.addEventListener('click', (function (e) {
+                                resetInput()
+                                if (elem.dataset.action == 1) {
+                                    let idPhim = elem.dataset.id
+                                    $('.modal-title').text("Sửa phim");
+                                    layDuLieuPhimId(idPhim)
+                                    $('#btn-submit').click(function (e) {
+                                        validateDuLieu(e, 1, idPhim)
+                                    })
+                                }
+                                else if (elem.dataset.action == 0) {
+                                    $('.modal-title').text("Thêm phim")
+                                    $('#btn-submit').click(function (e) {
+                                        validateDuLieu(e, 0)
+                                    })
+                                }
+                            }))
+                        })
+                        $.ajax({
+                            url: "/api/theloai",
+                            method: "GET",
+                            success: function (res) {
+                                let s = []
+                                res.forEach(elem => {
+                                    let temp = `<option value="${elem.MaTheLoai}">${elem.TenTheLoai}</option>`
+                                    s.push(temp)
+                                })
+                                $('#ip-theloai').html(s.join(''))
+                            }
+                        })
+                    }
+                })
+            }
+        })
+        //cac ham
+        function layDuLieuPhimId(dataId) {
+            //layTheInput
+            let ipTenPhim = $('#ip-tenphim')
+            let ipThoiLuong = $('#ip-tl')
+            let ipNgayCongChieu = $('#ip-ncc')
+            let ipNgonNgu = $('#ip-nn')
+            let ipDienVien = $('#ip-dv')
+            let ipQuocGia = $('#ip-qg')
+            let ipNSX = $('#ip-nsx')
+            let ipTomTat = $('#ip-tomtat')
+            let ipTrangThai = $('#ip-trangthai')
+            let ipTheLoai = $('#ip-theloai')
+            let ipAnh = $('#ip-anh')
+            let ipGhiChu = $('#ip-ghichu')
+            let ipTuoi = $('#ip-tuoi')
+
+            $.ajax({
+                url: '/admin/HomeAdmin/getPhimId',
+                method: 'GET',
+                data: { id: dataId },
+                success: function (res) {
+                    console.log(res.data[0])
+                    ipTenPhim.val(res.data[0].TenPhim)
+                    ipThoiLuong.val(res.data[0].ThoiLuong)
+                    let tmp = res.data[0].NgayCongChieu
+                    let time = /\d+/g.exec(tmp)
+                    let timer = new Date(Number.parseInt(time[0]))
+                    let timevalue = `${timer.getFullYear()}-${timer.getMonth() < 10 ? '0' + timer.getMonth() : timer.getMonth()}-${timer.getDate() < 10 ? '0' + timer.getDate() : timer.getDate()}`
+                    ipNgayCongChieu.val(timevalue)
+                    ipNgonNgu.val(res.data[0].NgonNgu)
+                    ipDienVien.val(res.data[0].DienVien)
+                    ipQuocGia.val(res.data[0].QuocGia)
+                    ipNSX.val(res.data[0].NhaSanXuat)
+                    ipTomTat.val(res.data[0].TomTat)
+                    ipTrangThai.val(res.data[0].TrangThai)
+                    ipTheLoai.val(res.data[0].MaTheLoai)
+                    //ipAnh.val(res.data[0].Anh)
+                    ipGhiChu.val(res.data[0].GhiChu)
+                    ipTuoi.val(res.data[0].Tuoi)
+                }
+            })
+        }
+        function dangKyValidate() {
+            $('#my-form').validate({
+                rules: {
+                    "tenphim": {
+                        required: true,
+                        minlength: 2
+                    },
+                    "thoiluong": {
+                        required: true,
+                        minlength: 2
+                    },
+                    "ngonngu": {
+                        required: true
+                    },
+                    "dienvien": "required",
+                    "quocgia": "required",
+                    "nhasanxuat": "required",
+                    "anh": {
+                        required: true
+                    },
+                    "trangthai": "required",
+                    "theloai": "required",
+                    "tuoi": "required"
+                },
+                messages: {
+                    "tenphim": "Bạn phải nhập tên phim",
+                    "thoiluong": "Bạn phải nhập thời lượng",
+                    "ngonngu": "Bạn phải nhập ngôn ngữ",
+                    "dienvien": "Bạn phải nhập diễn viên",
+                    "quocgia": "Bạn phải nhập quốc gia",
+                    "nhasanxuat": "Bạn phải nhập nhà sản xuất",
+                    "anh": "Bạn phải chọn ảnh",
+                    "trangthai": "Bạn phải chọn trạng thái",
+                    "theloai": "Bạn phải chọn thể loại",
+                    "tuoi": "Bạn phải chọn tuổi"
+                }
+            })
+        }
+        function validateDuLieu(e, action, idPhim) {
+            if ($('#my-form').valid()) {
+                e.preventDefault()
+                let formData = new FormData()
+                let ten = $('#ip-tenphim').val()
+                let thoiluong = $('#ip-tl').val()
+                let ngaycongchieu = $('#ip-ncc').val()
+                let ngonngu = $('#ip-nn').val()
+                let dienvien = $('#ip-dv').val()
+                let quocgia = $('#ip-qg').val()
+                let nhasanxuat = $('#ip-nsx').val()
+                let tomtat = $('#ip-tomtat').val()
+                let trangthai = $('#ip-trangthai').val()
+                let theloai = $('#ip-theloai').val()
+                let anh = document.getElementById('ip-anh').files[0]
+                let ghichu = $('#ip-ghichu').val()
+                let tuoi = $('#ip-tuoi').val()
+
+                formData.append("ten", ten)
+                formData.append("thoiluong", thoiluong)
+                formData.append("ngaycongchieu", ngaycongchieu)
+                formData.append("ngonngu", ngonngu)
+                formData.append("dienvien", dienvien)
+                formData.append("quocgia", quocgia)
+                formData.append("nsx", nhasanxuat)
+                formData.append("tomtat", tomtat)
+                formData.append("trangthai", trangthai)
+                formData.append("matheloai", theloai)
+                formData.append("anh", anh)
+                formData.append("ghichu", ghichu)
+                formData.append("tuoi", tuoi)
+                console.log(anh);
+                if (action == 1) {
+                    formData.append('id', idPhim)
+                    capNhatDuLieu(formData)
+                    console.log('sua')
+                }
+                else if (action == 0) {
+                    themDuLieu(formData)
+                    console.log('them')
+                }
+            }
+        }
+        function capNhatDuLieu(formData) {
+            $.ajax({
+                data: formData,
+                url: "/admin/HomeAdmin/updatePhim",
+                method: "POST",
+                contentType: false,
+                processData: false,
+                success: function (res) {
+                    console.log(res)
+                    if (res.message == 'ok') {
+                        $('#phim-modal').scrollTop(0)
+                        $('.alert').css('display', 'block')
+                        setTimeout(() => {
+                            $('.alert').alert('close')
+                            loadPhim()
+                        }, 1000)
+                    }
+                }
+            })
+        }
+        function themDuLieu(formData) {
+            $.ajax({
+                data: formData,
+                url: "/admin/HomeAdmin/uploadPhim",
+                method: "POST",
+                contentType: false,
+                processData: false,
+                success: function (res) {
+                    if (res.message == 'ok') {
+                        $('#phim-modal').scrollTop(0)
+                        $('.alert').css('display', 'block')
+                        setTimeout(() => {
+                            $('.alert').alert('close')
+                            loadPhim()
+                        }, 1000)
+                    }
+                }
+            })
+        }
+        function resetInput() {
+            let ten = $('#ip-tenphim').val('')
+            let thoiluong = $('#ip-tl').val('')
+            let ngaycongchieu = $('#ip-ncc').val('')
+            let ngonngu = $('#ip-nn').val('')
+            let dienvien = $('#ip-dv').val('')
+            let quocgia = $('#ip-qg').val('')
+            let nhasanxuat = $('#ip-nsx').val('')
+            let tomtat = $('#ip-tomtat').val('')
+            let trangthai = $('#ip-trangthai').val('')
+            let theloai = $('#ip-theloai').val('')
+            let anh = document.getElementById('ip-anh').value = ''
+            let ghichu = $('#ip-ghichu').val('')
+            let tuoi = $('#ip-tuoi').val('')
+        }
+    })
+</script>

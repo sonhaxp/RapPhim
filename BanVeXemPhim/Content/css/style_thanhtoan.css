@@ -1,0 +1,232 @@
+
+/* Css Main */
+.app__content-payment {
+    margin-top: 32px;
+}
+.pay-ticket-wrap {
+    background-color: #f26b38;
+    padding: 20px 10px 12px 10px;
+    display: flex;
+    flex-direction: column;
+}
+.pay-ticket__heading {
+    font-size: 2.4rem;
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 28px;
+    
+}
+/* pay-ticket__body */
+.pay-ticket__body {
+    background-color: #fff;
+    padding: 40px 32px;
+}
+
+.lable-text-payment {
+    font-size: 1.4rem;
+    counter-reset: #43464b;
+    line-height: 40px;  
+    width: 40px;
+}
+.row-bt {
+    margin-bottom: 20px;
+}
+.input-payment {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgb(182, 182, 182);
+    padding: 0 10px;
+}
+.pay-des {
+    color: #43464b;
+    margin-left: 10px;
+    font-size: 1.1rem;
+}
+.pay-des a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Btn-ticket */
+.ticket-btn-payment {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+.ticket-btn-back-payment {
+    width: 154px;
+    height: 46px;
+    display: block;
+    text-decoration: none;
+    background-color: #f26b38;
+    font-size: 1.4rem;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: -1px;
+    border: none;
+}
+
+.ticket-btn-pay{
+    width: 154px;
+    height: 46px;
+    display: block;
+    text-decoration: none;
+    background-color: #f26b38;
+    font-size: 1.4rem;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    letter-spacing: 1px;
+    margin-left: 30px;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+}
+.ticket-btn-back:hover, .ticket-btn-next:hover {
+    background-color: #e26435;
+}
+/* ticket-feature */
+.ticket-feature {
+    background-color: #f1f1f1;
+}
+.ticket-feature__img {
+    width: 74%;
+    height: auto;
+    margin-left: 38px;
+    margin-top: 10px;
+}
+
+/* ticket-detail */
+.ticket-detail {
+    padding: 0 10px 10px;
+}
+.ticket-detail__heading {
+    font-size: 14px;
+    line-height: 20px;
+    color: #43464b;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 36px;
+}
+.ticket-detail__heading-vn {
+    color: #a0a3a7 ;
+}
+.ticket-detail__icon {
+    text-decoration: none;
+    display: block;
+    width: 28px;
+    height: 22px;
+    display: inline-block;
+    background-color: #f26b38;
+    background-size: cover;
+    font-size: 1.4rem;
+    line-height: 22px;
+    color: white;
+    text-align: center;
+    border-radius: 1px;
+}
+.ticket-detail__text {
+    color: #ff0033;
+    padding-left: 5px;
+    font-size: 11px;
+}
+/* ticket-info */
+.ticket-info {
+    margin-top: 25px;
+}
+.ticket-info__list {
+    list-style: none;
+}
+.ticket-info__item {
+    font-size: 1.3rem;
+    border-bottom: 1px dotted #ced0da;
+    padding: 10px 0;
+}
+.ticket-price-total {
+    padding: 18px 0 30px 0;
+}
+.ticket-price-total p {
+    
+    font-size: 1.5rem;
+    
+}
+.ticket-price-total span {
+    color: #f26b38;
+    font-size: 2rem ;
+    margin-left: 5px;
+}
+/* Responsive */
+/* Moblie and Tablet */
+@media only screen and (max-width: 1023px) {
+    
+    .ticket-feature__img {
+        width: 97%;
+        margin-left: 10px;
+    }
+    .ticket-feature{
+        margin-top: 10px;
+    }
+
+}
+/* Tablet */
+@media only screen and (min-width: 740px) and (max-width: 1023px) {
+    .app__content-payment {
+        padding: 20px;
+    }
+   .ticket-feature__img {
+       width: 97%;
+       margin-left: 10px;
+   }
+   
+   .pay-ticket__body {
+       padding: 10px;
+   }
+   .ticket-btn-back-payment {
+        width: 325px;
+   }
+   .ticket-btn-pay {
+        width: 325px;
+   }
+}
+/* Mobile */
+@media only screen and (max-width: 739px) {
+    .app__content-payment {
+        padding: 0 14px 20px;   
+    }
+    .option-ticket-food__heading {
+        font-size: 1.8rem;
+    }
+    .ticket-feature__img {
+        width: 95%;
+        margin-left: 10px; 
+    }
+    .ticket-btn-back {
+        width: 157px;
+        height: 34px;
+        line-height: 34px;
+     
+   }
+   .ticket-btn-next {
+        width: 157px;
+        height: 34px;
+        line-height: 34px;
+   }
+   .pay-ticket__body {
+       padding: 10px;
+   }
+   .row-bt {
+       margin-bottom: 10px;
+   }
+   .pay-ticket__heading {
+       font-size: 1.8rem;
+   }
+}

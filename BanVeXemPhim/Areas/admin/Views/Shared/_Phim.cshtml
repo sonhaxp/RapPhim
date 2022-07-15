@@ -1,0 +1,110 @@
+﻿<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Phim</h6>
+        <div class="table-responsive">
+            <i class="btn-action fa fa-plus bg-success mt-4" data-action="0" id="0" data-toggle="modal" data-target="#phim-modal"></i>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Tên Phim</th>
+                        <th scope="col">Ngày Công Chiếu</th>
+                        <th scope="col">Trạng Thái</th>
+                        <th scope="col">Thể Loại</th>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col">Tuổi</th>
+                        <th scope="col">Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="paging">
+                <div class="btn btn-primary btn-paging" id="btn-active" style="background-color:tomato">1</div>
+                @for (int i = 2; i <= (int)Model; i++)
+                {
+                    <div class="btn btn-primary btn-paging">@i</div>
+                }
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="phim-modal" tabindex="-1" role="dialog" aria-labelledby="nhanvien-modal" aria-hidden="true">
+                <div class="alert alert-success alert-dismissible fade show" style="width: 50%;margin:auto;display:none" role="alert">
+                    Thành công!
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle">Thêm Phim</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form id="my-form" class="modal-body">
+                            <div class="input-group">
+                                <b>Tên Phim</b>
+                                <input type="text" name="tenphim" id="ip-tenphim">
+                            </div>
+                            <div class="input-group">
+                                <b>Thời Lượng</b>
+                                <input name="thoiluong" type="number" id="ip-tl">
+                            </div>
+                            <div class="input-group">
+                                <b>Ngày Công Chiếu</b>
+                                <input name="ngaycongchieu" type="date" id="ip-ncc">
+                            </div>
+                            <div class="input-group">
+                                <b>Ngôn Ngữ</b>
+                                <input name="ngonngu" type="text" id="ip-nn">
+                            </div>
+                            <div class="input-group">
+                                <b>Diễn Viên</b>
+                                <input name="dienvien" type="text" id="ip-dv">
+                            </div>
+                            <div class="input-group">
+                                <b>Quốc Gia</b>
+                                <input type="text" name="quocgia" id="ip-qg">
+                            </div>
+                            <div class="input-group">
+                                <b>Nhà Sản Xuất</b>
+                                <input type="text" name="nhasanxuat" id="ip-nsx">
+                            </div>
+                            <div class="input-group">
+                                <b>Tóm Tắt</b>
+                                <textarea style="width: 100%" name="tomtat" id="ip-tomtat"></textarea>
+                            </div>
+                            <div class="input-group">
+                                <b>Trạng Thái</b>
+                                <select name="trangthai" style="margin-left:16px" id="ip-trangthai">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <b>Thể Loại</b>
+                                <select name="theloai" style="margin-left:16px" id="ip-theloai">
+                                    
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <b>Ảnh</b>
+                                <input name="anh" type="file" id="ip-anh">
+                            </div>
+                            <div class="input-group">
+                                <b>Ghi chú</b>
+                                <textarea style="width:100%" id="ip-ghichu"></textarea>
+                            </div>
+                            <div class="input-group">
+                                <b>Tuổi</b>
+                                <input id="ip-tuoi" name="tuoi" type="number" min="1" value="1" />
+                            </div>
+                            <button type="button" id="btn-submit" class="btn btn-primary">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

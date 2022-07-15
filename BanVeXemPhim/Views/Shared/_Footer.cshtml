@@ -1,0 +1,134 @@
+﻿<footer class="footer">
+    <div class="footer_container section">
+        <div class="footer_content">
+            <div class="footer_content-header">
+                <h3 class="footer_content-heading">giới thiệu</h3>
+            </div>
+            <ul class="footer_content-list">
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        Về Chúng tôi
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        thoả thuận sử dụng
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        quy chế hoạt động
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        chính sách bảo mật
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_content">
+            <div class="footer_content-header">
+                <h3 class="footer_content-heading">góc điện ảnh</h3>
+            </div>
+            <ul class="footer_content-list">
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        Thể loại phim
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        bình luận phim
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        blog điện ảnh
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        phim hay tháng
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_content">
+            <div class="footer_content-header">
+                <h3 class="footer_content-heading">hỗ trợ</h3>
+            </div>
+            <ul class="footer_content-list">
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        góp ý
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        sale & services
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        rạp / giá vé
+                    </a>
+                </li>
+                <li class="footer_content-item">
+                    <a href="#" class="footer_content-link">
+                        <i class="fa-solid fa-angles-right"></i>
+                        tuyển dụng
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_content">
+            <div class="footer_content-header">
+                <h3 class="footer_content-heading">KẾT NỐI</h3>
+            </div>
+            <div class="footer_social">
+                <i class="fa-brands fa-facebook-square"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+            <div class="footer_content-header">
+                <h3 class="footer_content-heading">DOWNLOAD APP</h3>
+            </div>
+            <div class="footer_download">
+                <i class="fa-brands fa-apple"></i>
+                <i class="fa-brands fa-google-play"></i>
+            </div>
+        </div>
+    </div>
+    <p class="footer_copyright">&copy; tháng 3 năm 2022</p>
+</footer>
+@{
+    BanVeXemPhim.Models.Entities.TaiKhoan tk = (BanVeXemPhim.Models.Entities.TaiKhoan)Session["user"];
+    if (tk != null)
+    {
+        BanVeXemPhim.Models.Entities.RapPhimDBContext db = new BanVeXemPhim.Models.Entities.RapPhimDBContext();
+        BanVeXemPhim.Models.Entities.KhachHang kh = db.KhachHang.FirstOrDefault(x => x.Email == tk.TaiKhoan1);
+        <p id="ten-tai-khoan">@kh.HoTen</p>
+        <p id="ma-khach-hang">@kh.MaKhachHang</p>
+        <script>
+            document.getElementById('ten-tai-khoan').style = "display:none;"
+            document.getElementById('ma-khach-hang').style = "display:none;"
+            document.getElementById('btn-showModel').style = "display:none;"
+            document.querySelector('.user').style = "display:block;"
+            document.getElementById('login_fb').style = "display:none;"
+            document.querySelector('.user-name').textContent = document.getElementById('ten-tai-khoan').textContent;
+            document.querySelector('.user-name').setAttribute("id",document.getElementById('ma-khach-hang').textContent);
+        </script>
+    }
+}

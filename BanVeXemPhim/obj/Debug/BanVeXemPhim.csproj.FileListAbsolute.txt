@@ -1,0 +1,346 @@
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.pdb
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.rsp
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.rsp
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.AppContext.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.rsp
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\WebGrease.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.pdb
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.AssemblyReference.cache
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CoreCompileInputs.cache
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CopyComplete
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.pdb
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\BanVeXemPhim.dll.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\BanVeXemPhim.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\BanVeXemPhim.pdb
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\csc.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\csc.exe.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\csc.rsp
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\csi.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\csi.rsp
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\System.AppContext.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\vbc.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\vbc.exe.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\vbc.rsp
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\Antlr3.Runtime.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\EntityFramework.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\EntityFramework.SqlServer.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\Newtonsoft.Json.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Net.Http.Formatting.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Helpers.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Http.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Http.WebHost.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Mvc.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Optimization.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Razor.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.WebPages.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.WebPages.Razor.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\WebGrease.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\EntityFramework.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\EntityFramework.SqlServer.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\Newtonsoft.Json.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Net.Http.Formatting.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Helpers.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Http.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Http.WebHost.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Mvc.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Optimization.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.Razor.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.WebPages.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\System.Web.WebPages.Razor.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\Antlr3.Runtime.pdb
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.AssemblyReference.cache
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CoreCompileInputs.cache
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CopyComplete
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\obj\Debug\BanVeXemPhim.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim - Copy\BanVeXemPhim\obj\Debug\BanVeXemPhim.pdb
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\PagedList.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.dll
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\PagedList.xml
+C:\Users\Truong Son\Desktop\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll.config
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.pdb
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe.config
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.rsp
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.exe
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.rsp
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.AppContext.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe.config
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.rsp
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\WebGrease.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.pdb
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.AssemblyReference.cache
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CoreCompileInputs.cache
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CopyComplete
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.dll
+C:\Users\Truong Son\Desktop\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.pdb
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll.config
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.pdb
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe.config
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.rsp
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.exe
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.rsp
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.AppContext.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Collections.Immutable.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Reflection.Metadata.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe.config
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.rsp
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe.config
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.Web.Infrastructure.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\WebGrease.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.pdb
+D:\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.AssemblyReference.cache
+D:\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CoreCompileInputs.cache
+D:\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CopyComplete
+D:\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.dll
+D:\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.pdb
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll.config
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\BanVeXemPhim.pdb
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.exe.config
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csc.rsp
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.exe
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\csi.rsp
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.AppContext.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Collections.Immutable.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\System.Reflection.Metadata.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.exe.config
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\vbc.rsp
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\roslyn\VBCSCompiler.exe.config
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.Web.Infrastructure.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\WebGrease.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\EntityFramework.SqlServer.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\PagedList.Mvc.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\Newtonsoft.Json.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Net.Http.Formatting.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Helpers.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Http.WebHost.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Mvc.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Optimization.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.Razor.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Deployment.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\System.Web.WebPages.Razor.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\Antlr3.Runtime.pdb
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.AssemblyReference.cache
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CoreCompileInputs.cache
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.csproj.CopyComplete
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.dll
+D:\Hoctap\New folder\New folder\BanVeXemPhim\BanVeXemPhim\obj\Debug\BanVeXemPhim.pdb

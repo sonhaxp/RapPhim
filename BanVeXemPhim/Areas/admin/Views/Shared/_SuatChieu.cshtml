@@ -1,0 +1,87 @@
+﻿@{
+    var phim = (List<BanVeXemPhim.Models.Entities.Phim>)ViewBag.Phim;
+    var phong = (List<BanVeXemPhim.Models.Entities.PhongChieu>)ViewBag.Phong;
+    var rap = (List<BanVeXemPhim.Models.Entities.Rap>)ViewBag.Rap;
+}
+<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Suất chiếu</h6>
+        <div class="table-responsive">
+            <i class="btn-action sc fa fa-plus bg-success mt-4" per="0" id="0"></i>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Mã suất chiếu</th>
+                        <th scope="col">Giờ chiếu</th>
+                        <th scope="col">Ngày chiếu</th>
+                        <th scope="col">Tên phim</th>
+                        <th scope="col">Phòng Chiếu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <script>
+                console.log('hello')
+            </script>
+            <button type="button" class="btn-openmodal" data-toggle="modal" data-target="#suatchieu-modal" hidden>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="suatchieu-modal" tabindex="-1" role="dialog" aria-labelledby="suatchieu-modal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <b>Mã suất chiếu</b>
+                                <input type="text" id="ip-masuatchieu" readonly style="background-color:darkgray">
+                            </div>
+                            <div class="input-group">
+                                <b>Giờ chiếu </b>
+                                <input type="text" id="ip-giochieu">
+                            </div>
+                            <div class="input-group">
+                                <b>Thời gian chiếu </b>
+                                <input type="date" id="ip-thoigianchieu">
+                            </div>
+                            <div class="input-group">
+                                <b>Phim</b>
+                                <select id="select-phim">
+                                    @foreach (var i in phim)
+                                    {
+                                        <option value="@i.MaPhim">@i.TenPhim</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <b>Rạp</b>
+                                <select id="select-rap">
+                                    @foreach (var i in rap)
+                                    {
+                                        <option value="@i.MaRap">@i.TenRap</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <b>Phòng</b>
+                                <select id="select-phong">
+                                   
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-suatchieu-save">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

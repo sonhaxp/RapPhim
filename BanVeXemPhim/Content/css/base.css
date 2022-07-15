@@ -1,0 +1,40 @@
+/* Css Base */
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* 100% ~ 16px */
+    font-size: 62.5%; /*10px*/
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.buy-ticket_main {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+input,select {
+    font-size:1.4rem;
+}
+/* Xử lý modal */
+#modal-ticket.hide {
+    display: none;
+}
+#modal-ticket.open, #modal-seat.open, #modal-payment.open{
+    display: block;
+}
+#modal-seat, #modal-payment {
+    display: none;
+}
+/* btn */
+.ticket-btn.open, .ticket-btn-seat.open {
+    display: flex;
+}
+.ticket-btn.hide {
+    display: none;
+}
+.ticket-btn-seat {
+    display: none;
+}

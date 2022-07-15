@@ -1,0 +1,67 @@
+﻿<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Đồ ăn</h6>
+        <div class="table-responsive">
+            <i class="btn-action da fa fa-plus bg-success mt-4" per="0" id="0"></i>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Mã đồ ăn</th>
+                        <th scope="col">Tên đổ ăn</th>
+                        <th scope="col">Giá bán</th>
+                        <th scope="col">Ảnh</th>
+                        <th scope="col">Chi tiết</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <script>
+                console.log('hello')
+            </script>
+            <button type="button" class="btn-openmodal" data-toggle="modal" data-target="#da-modal" hidden>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="da-modal" tabindex="-1" role="dialog" aria-labelledby="da-modal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <b>Mã đồ ăn</b>
+                                <input type="text" id="ip-mada" readonly style="background-color:darkgray">
+                            </div>
+                            <div class="input-group">
+                                <b>Tên đồ ăn</b>
+                                <input type="text" id="ip-tenda">
+                            </div>
+                            <div class="input-group">
+                                <b>Giá bán</b>
+                                <input type="text" id="ip-giada">
+                            </div>
+                            <div class="input-group">
+                                <b>Ảnh</b>
+                                <input type="text" id="ip-anhda">
+                            </div>
+                            <div class="input-group">
+                                <b>Chi tiết</b>
+                                <input type="text" id="ip-ctda">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-da-save">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

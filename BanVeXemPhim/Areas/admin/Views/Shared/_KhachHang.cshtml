@@ -1,0 +1,85 @@
+﻿<div class="col-12">
+    <div class="bg-light rounded h-100 p-4">
+        <h6 class="mb-4">Khách hàng</h6>
+        <div class="table-responsive">
+            <i class="btn-action kh fa fa-plus bg-success mt-4" per="0" id="0"></i>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Mã khách hàng</th>
+                        <th scope="col">Họ tên</th>
+                        <th scope="col">Số điện thoại</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Ngày sinh</th>
+                        <th scope="col">Giới tính</th>
+                        <th scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div id="paging-kh">
+                <div class="btn btn-primary btn-paging-kh" id="btn-active" style="background-color:tomato">1</div>
+                @for (int i = 2; i <= (int)Model; i++)
+                {
+                    <div class="btn btn-primary btn-paging-kh">@i</div>
+                }
+            </div>
+            <button type="button" class="btn-openmodal" data-toggle="modal" data-target="#khachhang-modal" hidden>
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="khachhang-modal" tabindex="-1" role="dialog" aria-labelledby="khachhang-modal" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalCenterTitle"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="input-group">
+                                <b>Mã khách hàng</b>
+                                <input type="text" id="ip-makh" readonly style="background-color:darkgray">
+                            </div>
+                            <div class="input-group">
+                                <b>Tên khách hàng</b>
+                                <input type="text" id="ip-tenkh">
+                            </div>
+                            <div class="input-group">
+                                <b>Ngày sinh</b>
+                                <input type="date" id="ip-ns">
+                            </div>
+                            <div class="input-group">
+                                <b>Giới tính</b>
+                                <select name="sex" class="model_input model_register-sex" required="">
+                                    <option value="-1" disabled="" selected="">Chọn giới tính</option>
+                                    <option value="1">Nam</option>
+                                    <option value="0">Nữ</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <b>Địa chỉ</b>
+                                <input type="text" id="ip-dc">
+                            </div>
+                            <div class="input-group">
+                                <b>Email</b>
+                                <input type="text" id="ip-email">
+                            </div>
+                            <div class="input-group">
+                                <b>Điện thoại</b>
+                                <input type="number" id="ip-dt">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-khachhang-save">Lưu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

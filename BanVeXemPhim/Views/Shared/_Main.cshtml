@@ -1,0 +1,122 @@
+﻿@model IEnumerable<BanVeXemPhim.Models.Entities.Phim>
+@{
+    List<BanVeXemPhim.Models.Entities.Phim> PhimSapChieu = ViewBag.PhimSapChieu;
+}
+    <div class="main">
+        <!--Begin slide -->
+        <div class="slider">
+            <div id="btn-prev" class="slider_prev">
+                <i class="fa-solid fa-angle-left"></i>
+            </div>
+            <div id="btn-next" class="slider_next">
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+            <ul class="slider_list-control">
+                <li class="slider_item-control active"></li>
+                <li class="slider_item-control"></li>
+                <li class="slider_item-control"></li>
+                <li class="slider_item-control"></li>
+                <li class="slider_item-control"></li>
+            </ul>
+            <div id="slider" class="slider_content">
+                <a href="#" class="slider_item">
+                    <img src="~/Content/img/slider5.jpg" alt="ảnh phim the batman" class="slider_img">
+                </a>
+                <a href="#" class="slider_item">
+                    <img src="~/Content/img/slider1.jpg" alt="ảnh phim bóng đè" class="slider_img">
+                </a>
+                <a href="#" class="slider_item">
+                    <img src="~/Content/img/slider2.jpg" alt="ảnh phim ambulance" class="slider_img">
+                </a>
+                <a href="#" class="slider_item">
+                    <img src="~/Content/img/slider3.jpg" alt="ảnh phim turning red" class="slider_img">
+                </a>
+                <a href="#" class="slider_item">
+                    <img src="~/Content/img/slider4.jpg" alt="ảnh phim nightmare alley" class="slider_img">
+                </a>
+                <a href="#" class="slider_item">
+                    <img src="~/Content/img/slider5.jpg" alt="ảnh phim the batman" class="slider_img">
+                </a>
+                <a href="#" class="slider_item">
+                    <img src="~/Content/img/slider1.jpg" alt="ảnh phim bóng đè" class="slider_img">
+                </a>
+            </div>
+        </div>
+        <!-- End slider -->
+        <!-- Begin film section -->
+        <div class="film section">
+            <div class="film section_header">
+                <h3 class="section_header-title active" id="current-film-btn">
+                    phim đang chiếu
+                </h3>
+                <h3 class="section_header-title" id="coming-up-film-btn">
+                    phim sắp chiếu
+                </h3>
+            </div>
+            <div class="film section_content active">
+                @foreach (var i in Model)
+                {
+                <div class="film section_content-item">
+                    <a href="/thong-tin/@i.MaPhim">
+                        <img src="~/Content/img/@i.Anh" alt="ảnh phim @i.GhiChu" class="film section_content-img">
+                        <div class="film section_content-btn">THÔNG TIN</div>
+                    </a>
+                    <h4 class="film section_content-name">@i.TenPhim</h4>
+                    <h4 class="film section_content-desc">@i.GhiChu</h4>
+                </div>}
+            </div>
+            <div class="film section_content">
+                @foreach (var i in PhimSapChieu)
+                {
+                <div class="film section_content-item">
+                    <a href="/thong-tin/@i.MaPhim">
+                        <img src="~/Content/img/@i.Anh" alt="ảnh phim @i.TenPhim" class="film section_content-img">
+                        <div class="film section_content-btn">THÔNG TIN</div>
+                    </a>
+                    <h4 class="film section_content-name">@i.TenPhim</h4>
+                    <h4 class="film section_content-desc">@i.GhiChu</h4>
+                </div>
+                }
+            </div>
+        </div>
+        <!-- End film section -->
+        <!-- Begin promotion -->
+        <div class="promotion section">
+            <div class="section_header">
+                <a href="#" class="promotion_link">
+                    <h3 class="section_header-title active">tin khuyến mãi</h3>
+                </a>
+            </div>
+            <div class="promotion section_content">
+                <a href="#" class="promotion_link-item">
+                    <img src="~/Content/img/promotion1.jpg" alt="ảnh khuyễn mãi 1" class="promtion_img">
+                    <div class="promotion_info">
+                        <h3 class="promotion_title-item">happy day </h3>
+                        <p class="promotion_content-item">Vào <strong>thứ ba hàng tuần</strong> ưu đãi giá vé <strong>Chỉ từ 50k</strong></p>
+                    </div>
+                </a>
+                <a href="#" class="promotion_link-item">
+                    <img src="~/Content/img/promotion2.png" alt="ảnh khuyễn mãi 2" class="promtion_img">
+                    <div class="promotion_info">
+                        <h3 class="promotion_title-item">Galaxy Cinema Tri Ân Thành Viên </h3>
+                    </div>
+                </a>
+                <a href="#" class="promotion_link-item">
+                    <img src="~/Content/img/promotion4.jpg" alt="ảnh khuyễn mãi 1" class="promtion_img">
+                    <div class="promotion_info">
+                        <h3 class="promotion_title-item">happy day </h3>
+                        <p class="promotion_content-item">Vào <strong>thứ ba hàng tuần</strong> ưu đãi giá vé <strong>Chỉ từ 50k</strong></p>
+                    </div>
+                </a>
+                <a href="#" class="promotion_link-item">
+                    <img src="~/Content/img/promotion4.jpg" alt="ảnh khuyễn mãi 1" class="promtion_img">
+                    <div class="promotion_info">
+                        <h3 class="promotion_title-item">happy day </h3>
+                        <p class="promotion_content-item">Vào <strong>thứ ba hàng tuần</strong> ưu đãi giá vé <strong>Chỉ từ 50k</strong></p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- End promotion -->
+    </div>
+    @Scripts.Render("~/bundles/myjs_slider")

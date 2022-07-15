@@ -1,0 +1,322 @@
+﻿@{
+    var SuatChieu = (BanVeXemPhim.Models.Entities.SuatChieu2)Model;
+    var DoAn = (List<BanVeXemPhim.Models.Entities.DoAn>)ViewBag.doan;
+    var phong = (BanVeXemPhim.Models.Entities.PhongChieu)ViewBag.phong;
+    var ghe = (List<BanVeXemPhim.Models.Entities.GheNgoi>)ViewBag.ghe;
+    var maghe = ghe.Select(x=>x.MaGheNgoi).ToList();
+    var ve = (List<BanVeXemPhim.Models.Entities.VeBan>)ViewBag.ve;
+    string[] day = { "Chủ nhật", "Thứ hai", "Thứ ba", "Thứ tư", "Thứ năm", "Thứ sáu", "Thứ bảy" };
+    string s = SuatChieu.ThoiGianChieu.ToString().Split(' ')[0];
+    var ngay = SuatChieu.GioChieu + " | " + day[(int)SuatChieu.ThoiGianChieu.Value.DayOfWeek] + ", " + s;
+    string tuoi = "C" + SuatChieu.Tuoi;
+    string[] hang = { "","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
+    int index=0;
+}
+<!-- Begin-main -->
+<div class="buy-ticket_main" id="@SuatChieu.MaSuatChieu">
+    <div class="grid wide">
+        <div class="row app__content">
+            <!-- chọn vé -->
+            <div class="col l-9 m-12 c-12" id="modal-ticket">
+                <!--Begin option-ticket-food -->
+                <div class="option-ticket-food">
+                    <h2 class="option-ticket-food__heading">CHỌN VÉ/THỨC ĂN</h2>
+                    <div class="option-ticket__wrap">
+                        <!-- Begin-table-ticket -->
+                        <table class="option-ticket-table">
+                            <thead class="ticket-food-table-head">
+                                <tr>
+                                    <th class="text-align-left">Loại vé</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá (VNĐ)</th>
+                                    <th>Tổng (VNĐ)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="ticket-food-table-body">
+                                <tr class="ticket-food-table-row__one">
+                                    <th class="text-align-left"style="width:47%;"><b>Người lớn</b> <p>Vé 2D</p></th>
+                                    <th class="input-quantity__ticket">
+                                        <input type="number" name="" id="ve_nguoilon" class="input-quantity input-ticket-js  js-change-value " min="0" max="10" value="0" onchange="tinhTien()">
+                                    </th>
+                                    <th>100.000</th>
+                                    <th id="tongtien_nguoilon">0</th>
+                                </tr>
+                            </tbody>
+                            <tfoot class="ticket-food-table-footer">
+                                <tr>
+                                    <th class="text-align-left">Tổng</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th id="tongtien_ve">0</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <!-- End-table-ticket -->
+                        <!-- Begin-table-food -->
+                        <table class="option-ticket-table">
+                            <thead class="ticket-food-table-head">
+                                <tr>
+                                    <th class="text-align-left">Combo</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá (VNĐ)</th>
+                                    <th>Tổng (VNĐ)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="ticket-food-table-body">
+                                @foreach (var i in DoAn)
+                                {
+                                <tr class="ticket-food-table-row__one height-large-row ">
+                                    <th class="w-47">
+                                        <div class="table-row-col">
+                                            <img src="~/Content/img/@i.Anh" alt="food" class="col__img">
+                                            <div class="col__des">
+                                                <b class="col__des-b" id="@i.MaDoAn">@i.TenDoAn </b>
+                                                <p class="col__des-p">@i.ChiTiet</p>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <input type="number" name="" value="0" id="sl_@i.MaDoAn" class="input-quantity input-quantity-combo js-change-value" min="0" onchange="tinhTien()">
+                                    </th>
+                                    <th>@i.GiaBan</th>
+                                    <th class="food-price-total">0</th>
+                                </tr>
+                                }
+                                @*<tr class="ticket-food-table-row__one height-large-row ">
+                                    <th class="w-47">
+                                        <div class="table-row-col">
+                                            <img src="~/Content/img/family_big.jpg" alt="food" class="col__img">
+                                            <div class="col__des">
+                                                <b class="col__des-b" id="name-combo-family">iCombo Family 2 Big </b>
+                                                <p class="col__des-p">2 BẮP + 4 NƯỚC 32 Oz + 2 PHẦN SNACK</p>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th>
+                                        <input type="number" name="" id="cb_family" class="input-quantity input-quantity-combo js-change-value" min="0" onchange="tinhTien()">
+                                    </th>
+                                    <th>199.000</th>
+                                    <th id="tongtien_family">0</th>
+                                </tr>
+                                <tr class="ticket-food-table-row__two height-large-row ">
+                                    <th>
+                                        <div class="table-row-col">
+                                            <img src="~/Content/img/2big.jpg" alt="food" class="col__img">
+                                            <div class="col__des">
+                                                <b class="col__des-b" id="name-combo-family">iCombo 2 Big</b>
+                                                <p class="col__des-p">1 BẮP + 2 NƯỚC NGỌT 32 OZ</p>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th><input type="number" name="" id="cb_2big" class="input-quantity input-quantity-combo js-change-value" min="0" onchange="tinhTien()"></th>
+                                    <th>92.000</th>
+                                    <th id="tongtien_2big">0</th>
+                                </tr>
+                                <tr class="ticket-food-table-row__three height-large-row ">
+                                    <th>
+                                        <div class="table-row-col">
+                                            <img src="~/Content/img/1big.jpg" alt="food" class="col__img">
+                                            <div class="col__des">
+                                                <b class="col__des-b" id="name-combo-family">iCombo 1 Big</b>
+                                                <p class="col__des-p">1 BẮP + 1 NƯỚC NGỌT 32 Oz</p>
+                                            </div>
+                                        </div>
+                                    </th>
+                                    <th><input type="number" name="" id="cb_1big" class="input-quantity input-quantity-combo js-change-value" min="0" onchange="tinhTien()"></th>
+                                    <th>79.000</th>
+                                    <th id="tongtien_1big">0</th>
+                                </tr>*@
+                            </tbody>
+                            <tfoot class="ticket-food-table-footer food-table-footer">
+                                <tr>
+                                    <th class="text-align-left ">Tổng</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th id="tongtien_doan">0</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <!-- End-table-food -->
+                    </div>
+                </div>
+                <!-- End option-ticket-food -->
+            </div>
+            <!-- chọn ghế -->
+            <div class="col l-9 m-12 c-12 " id="modal-seat">
+                <!-- Begin option-seat -->
+                <div class="option-seat">
+                    <h2 class="option-seat__heading">CHỌN GHẾ: <span></span></h2>
+                    <div class="option-seat__body">
+                        <!--Begin Seat-Map -->
+                        <div class="option-seat__map">
+                            <!-- row-O -->
+                            @for(var i = phong.soluonghang; i > 0; i--) {
+                                index = phong.soluongcot * phong.soluonghang;
+                                index = index - (phong.soluonghang - i+1) * phong.soluongcot;
+                            <ul class="seat-row">
+                                <li class="seat-row__item boder-text seat-row__number-item-text ">@hang[i]</li>
+                                <li class="seat-row__item">
+                                    <ul class="seat-row-number ">
+                                        @for (var t = 1; t <= 4; t++) {
+                                        <li class="seat-row__number-item" id="@maghe[index++]">@t</li>
+                                        }
+                                    </ul>
+                                    <ul class="seat-row-number">
+                                        @for (var t = 5; t <= phong.soluongcot - 4; t++)
+                                        {
+                                            <li class="seat-row__number-item" id="@maghe[index++]">@t</li>
+                                         }
+                                    </ul>
+                                    <ul class="seat-row-number ">
+                                        @for (var t = phong.soluongcot - 3; t <= phong.soluongcot; t++)
+                                        {
+                                            <li class="seat-row__number-item" id="@maghe[index++]">@t</li>
+                                          }
+                                    </ul>
+                                </li>
+                                <li class="seat-row__item boder-text seat-row__number-item-text ">@hang[i]</li>
+                            </ul>
+                            }
+                        </div>
+                        <!--End Seat-Map -->
+                        <!-- Begin Description -->
+                        <div class="option-seat__desc">
+                            <div class="seat-desc__heading">Màn hình</div>
+                            <div class="seat-desc__wrap">
+                                <span class="seat-desc__selected">Ghế đã chọn</span>
+                                <span class="seat-desc__unavailable">Ghế đã bán</span>
+                                <span class="seat-desc__normal">Có thế chọn</span>
+                                <span class="seat-desc__area">Không thể chọn</span>
+                            </div>
+                        </div>
+                        <!-- End Description -->
+                    </div>
+                </div>
+                <!-- End option-seat -->
+            </div>
+            <!-- thanh toán -->
+            <div class="col l-9 m-12 c-12" id="modal-payment">
+                <div class="pay-ticket-wrap">
+                    <h2 class="pay-ticket__heading">VUI LÒNG THANH TOÁN</h2>
+                    <div class="pay-ticket__body">
+                        <div class="row row-bt">
+                            <div class="col l-3 m-12 c-12">
+                                <lable class="lable-text-payment">Hình thức thanh toán</lable>
+                            </div>
+                            <div class="col l-5 m-12 c-12">
+                                <select name="Chọn hình thức" id="payment" class="input-payment ">
+                                    <option value="">Chọn loại thẻ</option>
+                                    <option value="ATM">ATM</option>
+                                    <option value="Momo">Ví điện tử Momo</option>
+                                    <option value="VNPay">Ví điện tử VNPay</option>
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="row row-bt">
+                            <div class="col l-3 m-12 c-12">
+                                <lable class="lable-text-payment">Họ và tên</lable>
+                            </div>
+                            <div class="col l-5 m-12 c-12">
+                                <input type="text" name="" id="name" class="input-payment " required>
+                            </div>
+                        </div>
+
+                        <div class="row row-bt">
+                            <div class="col l-3 m-12 c-12">
+                                <lable class="lable-text-payment">Email</lable>
+                            </div>
+                            <div class="col l-5 m-12 c-12">
+                                <input type="email" name="" id="email" class="input-payment " required>
+                            </div>
+                        </div>
+                        <div class="row row-bt">
+                            <div class="col l-3 m-12 c-12">
+                                <lable class="lable-text-payment">Số điện thoại</lable>
+                            </div>
+                            <div class="col l-5 m-12 c-12">
+                                <input type="text" name="" id="phoneNum" class="input-payment " required>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="l-o-3 l-5 c-12">
+                                <span class="pay-des">(*) Bằng việc click/chạm vào THANH TOÁN. bạn đã xác nhận hiểu rõ các <b><a href="">Quy Định Giao Dịch Trực Tuyến</a></b>  của Galaxy Cinema.</span>
+                            </div>
+
+                        </div>
+                        <!--End Btn-ticket -->
+                        <div class="row">
+                            <!--Begin Btn-payment -->
+                            <div class="l-o-3 l-5 c-12">
+                                <div class="ticket-btn-payment">
+                                    <btn class="ticket-btn-back-payment js-btn-back-payment">
+                                        QUAY LẠI
+                                    </btn>
+                                    <btn class="ticket-btn-pay">
+                                        THANH TOÁN
+                                    </btn>
+                                </div>
+                            </div>
+                            <!--End Btn-payment -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col l-3 m-12 c-12 ">
+                <!-- Begin ticket-feature -->
+                <div class="ticket-feature">
+                    <img src="/Content/img/@SuatChieu.Anh" alt="anhphim" class="ticket-feature__img">
+                    <!-- Begin ticket-detail -->
+                    <div class="ticket-detail">
+                        <h2 class="ticket-detail__heading">
+                            @SuatChieu.TenPhim
+                            <br />
+                            @SuatChieu.GhiChu
+                            <p class="ticket-detail__heading-vn"></p>
+                        </h2>
+                        <div class="ticket-detail__request">
+                            <a class="ticket-detail__icon">@tuoi</a>
+                            <span class="ticket-detail__text">(*) Phim chỉ dành cho khán giả từ @SuatChieu.Tuoi tuổi trở lên</span>
+                            <div class="ticket-info">
+                                <ul class="ticket-info__list">
+                                    <li class="ticket-info__item"><b>Rap:</b> @SuatChieu.TenRap  | @SuatChieu.TenPhong </li>
+                                    <li class="ticket-info__item"><b>Suất chiếu:</b> @ngay</li>
+                                    <li class="ticket-info__item">
+                                        <b>Combo: </b>
+                                        <span id="list-combo"></span>
+                                        <span></span>
+                                    </li>
+                                    <li class="ticket-info__item"><b>Ghế: </b><span id="seatLog" class="active-seat"></span></li>
+                                </ul>
+                            </div>
+                            <div class="ticket-price-total">
+                                <p>Tổng:<span id="tongtien">0</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End ticket-detail -->
+                    <!--Begin Btn-ticket -->
+                    <div class="ticket-btn">
+                        <btn href="" class="ticket-btn-next js-btn-next-ticket">
+                            TIẾP TỤC
+                        </btn>
+                    </div>
+                    <!--End Btn-ticket -->
+                    <!--Begin Btn-seat -->
+                    <div class="ticket-btn-seat">
+                        <button href="" class="ticket-btn-back js-btn-back-seat">
+                            QUAY LẠI
+                        </button>
+                        <button href="" class="ticket-btn-next js-btn-next-seat">
+                            TIẾP TỤC
+                        </button>
+                    </div>
+                    <!--End Btn-seat -->
+                </div>
+                <!-- End ticket-feature -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End-main -->
+@Scripts.Render("~/bundles/myjs_choose-ticket")

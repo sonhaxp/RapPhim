@@ -1,0 +1,46 @@
+﻿@model IEnumerable<BanVeXemPhim.Models.Entities.Phim>
+@{ List<BanVeXemPhim.Models.Entities.Phim> PhimSapChieu = ViewBag.PhimSapChieu; }
+<nav class="header-nav">
+    <ul class="header-nav_list">
+        <li class="header-nav_item"><a href="/mua-ve" class="header-nav_link">mua vé</a></li>
+        <li class="header-nav_item">
+            <a href="javascript:;" class="header-nav_link">
+                phim
+                <i class="fa-solid fa-angle-down"></i>
+            </a>
+            <div class="drop-down">
+                <h3 class="drop-down_title"><a href="javascript:;">PHIM ĐANG CHIẾU</a></h3>
+                <ul class="drop-down_list">
+                    @foreach (var i in Model)
+                    {
+                    <li class="drop-down_item">
+                        <a href="/thong-tin/@i.MaPhim">
+                            <img src="~/Content/img/@i.Anh" alt="ảnh phim @i.GhiChu" class="drop-down_img">
+                            <div class="drop-down_btn">THÔNG TIN</div>
+                        </a>
+                        <p class="drop-down_name">@i.TenPhim</p>
+                        <p class="drop-down_desc">@i.GhiChu</p>
+                    </li>
+                    }
+                </ul>
+                <h3 class="drop-down_title"><a href="javascript:;">PHIM SẮP CHIẾU</a></h3>
+                <ul class="drop-down_list">
+                    @foreach (var i in PhimSapChieu)
+                    {
+                    <li class="drop-down_item">
+                        <a href="/thong-tin/@i.MaPhim">
+                            <img src="~/Content/img/@i.Anh" alt="ảnh phim @i.GhiChu" class="drop-down_img">
+                            <div class="drop-down_btn">THÔNG TIN</div>
+                        </a>
+                        <p class="drop-down_name">@i.TenPhim</p>
+                        <p class="drop-down_desc">@i.GhiChu</p>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </li>
+        <li class="header-nav_item"><a href="javascript:;" class="header-nav_link">rạp/giá vé</a></li>
+        <li class="header-nav_item"><a href="javascript:;" class="header-nav_link">hỗ trợ</a></li>
+        <li class="header-nav_item"><a href="/thanh-vien" class="header-nav_link">thành viên</a></li>
+    </ul>
+</nav>

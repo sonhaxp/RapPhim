@@ -1,0 +1,42 @@
+﻿<div class="model">
+    <div class=" model_body">
+        <div class="model_header">
+            <h3 class="model_heading active">đăng nhập</h3>
+            <span>/</span>
+            <h3 class="model_heading">đăng ký</h3>
+        </div>
+        <form class="form form-login form-display">
+            <input type="email" class="model_login-email model_input" placeholder="Email" required>
+            <input type="password" class="model_login-password model_input" placeholder="Mật khẩu" required>
+            <a href="#" class="model_login-forgot-pass">Quên mật khẩu?</a>
+            <div onclick="Login()" class="btn-model">đăng nhập</div>
+        </form>
+        <form class="form form-register">
+            <input type="text" class="model_input model_register-name" placeholder="Họ Tên" required>
+            <input type="email" class="model_register-email model_input" placeholder="Email" required>
+            <input type="password" class="model_register-password model_input" placeholder="Mật khẩu" required>
+            <input type="password" class="model_register-repassword model_input" placeholder="Nhập lại mật khẩu" required>
+            <input type="text" class="model_input model_register-addres" placeholder="Địa chỉ" required>
+            <input type="number" class="model_input model_register-phone" placeholder="Số điện thoại" required>
+            <select name="sex" class="model_input model_register-sex" required>
+                <option value="" disabled selected>Chọn giới tính</option>
+                <option value="1">Nam</option>
+                <option value="0">Nữ</option>
+            </select>
+            <input type="date" name="birthday" class="model_input model_register-birthday" required>
+            <div class="btn-model" id="btn-register">đăng ký</div>
+        </form>
+        <i class="fa-solid fa-xmark" id="btn-close"></i>
+    </div>
+    <div class="model_body model_forgot-password">
+        <div class="model_header">
+            <h3 class="model_heading active">quên mật khẩu</h3>
+        </div>
+        <p class="model_aleart">Vui lòng cung cấp email đăng nhập, chúng tôi sẽ gửi link kích hoạt cho bạn.</p>
+        <form class="form form-forgot-password form-display">
+            <input type="email" class="model_input" placeholder="Email">
+            <button class="btn-model">Gửi email</button>
+        </form>
+        <i class="fa-solid fa-xmark" id="btn-close"></i>
+    </div>
+</div>

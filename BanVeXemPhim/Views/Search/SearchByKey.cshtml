@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="padding:20px;">
+    <div style="display: flex;
+        justify-content: center;"></div>
+    <div style="display: flex;
+    justify-content: center;">
+        <input onkeydown="tim_kiem()" id="tim-kiem1" type="text" placeholder="Tìm kiếm..." style="width: 300px; height: 50px; font-size:2.0rem">
+    </div>
+    <div>
+    </div>
+</div>
+<hr />
+<div class="film section_content active">
+    @Html.Partial("_Search")
+</div>
+<script>
+    tim_kiem = function () {
+        var key = document.querySelector('#tim-kiem1').value;
+        $.ajax({
+            url: "/Search/Search?keyword=" + key,
+            success: function (response) {
+                document.getElementsByClassName('film section_content active')[0].innerHTML = response;
+            },
+            error: function () {
+                console.log("Load api get thất bại");
+            }
+        });
+    }
+</script>

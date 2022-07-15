@@ -1,0 +1,68 @@
+﻿@{
+    var phim = (BanVeXemPhim.Models.Entities.Phim2)Model;
+    var PhimDangChieu = (List<BanVeXemPhim.Models.Entities.Phim>)ViewBag.PhimDangChieu;
+        var s = "https://localhost:";
+        var maphim = phim.MaPhim.Split('P')[1];
+        int t = int.Parse(maphim);
+        if (t < 10) { s += "4430" + t; }
+        else { s += "443" + t; }
+}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v13.0&appId=711272690249842&autoLogAppEvents=1" nonce="9BAiHuyM"></script>
+<div class="container-info">
+    <div class="content-info">
+        <header class="content-header-info">
+            <div class="content-header_card-img-info">
+                <img src="~/Content/img/@phim.Anh" alt="ảnh Phim @phim.GhiChu" class="content-header_img-info">
+                <div class="fb-like"
+                     data-href="@s"
+                     data-width="200"
+                     data-layout="button_count"
+                     data-action="like"
+                     data-size="small"
+                     data-share="true">
+                </div>
+            </div>
+            <div class="content-header_body-info">
+                <h2 class="content-header_title-info">@phim.TenPhim</h2>
+                <h2 class="content-header_subtitle-info">@phim.GhiChu</h2>
+                <a href="/mua-ve" class="btn-buy-ticket-info">mua vé</a>
+                <p class="content-header_desc-info"><span>Thời lượng:&nbsp;</span> @phim.ThoiLuong phút</p>
+                <p class="content-header_desc-info"><span>Nhà sản xuất:&nbsp;</span> @phim.NhaSanXuat</p>
+                <p class="content-header_desc-info"><span>Thể loại:&nbsp;</span>@phim.TenTheLoai</p>
+                <p class="content-header_desc-info"><span>Diễn viên:&nbsp;</span>@phim.DienVien</p>
+                <p class="content-header_desc-info"><span>Quốc gia:&nbsp;</span> @phim.QuocGia</p>
+                <p class="content-header_desc-info"><span>Ngôn ngữ:&nbsp;</span> @phim.NgonNgu</p>
+                <p class="content-header_desc-info"><span>Ngày công chiếu:&nbsp;</span>@phim.NgayCongChieu.Value.ToShortDateString()</p>
+            </div>
+        </header>
+        <div class="content-body-info">
+            <h1 class="content-body_title-info">nội dung phim</h1>
+            <p class="content-body-desc-info">@phim.TomTat</p>
+        </div>
+        <div class="content-body-info">
+            <h1 class="content-body_title-info">Bình luận phim</h1>
+
+            <div class="fb-comments" data-href="@s" data-width="" data-numposts="5"></div>
+        </div>
+    </div>
+    <div class="movieSideBar-info">
+        <h2 class="movieSideBar_title-info">phim đang chiếu</h2>
+        <div class="movieSideBar_content-info">
+            @foreach (var i in PhimDangChieu)
+            {
+                <div class="movieSideBar_card-info">
+                    <a href="/thong-tin?id=@i.MaPhim" class="movieSideBar_card-wrap-info">
+                        <img src="~/Content/img/@i.Anh" alt="ảnh phim @i.GhiChu" class="movieSideBar_card-img-info">
+                        <div class="background-btn-info">
+                            <div class="btn-buy-ticket--normal-info">Thông tin</div>
+                        </div>
+                    </a>
+                    <h4 class="movieSideBar_name-movie-info">@i.TenPhim</h4>
+                    <p class="movieSideBar_desc-movie-info"></p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    @Styles.Render("~/Content/mycss")
+    <script type="text/javascript" src="~/Scripts/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Begin header -->
+        @Html.Partial("_Header")
+        <!-- End header -->
+        <!-- Begin Nav -->
+        @Html.Action("RenderNav", "Home")
+        <!-- End nav -->
+        <!-- Begin Main -->
+        @RenderBody()
+        <!-- End main -->
+        <!-- Begin footer -->
+        @Html.Partial("_Footer")
+        <!-- End footer -->
+        @Html.Partial("_Model")
+    </div>
+    @Scripts.Render("~/bundles/myjs_home")
+   
+</body>
+</html>

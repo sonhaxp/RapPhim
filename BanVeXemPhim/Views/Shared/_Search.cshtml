@@ -1,0 +1,13 @@
+﻿@model IEnumerable<BanVeXemPhim.Models.Entities.Phim>
+    @foreach (var i in Model)
+    {
+        <div class="film section_content-item">
+            <a href="/thong-tin/@i.MaPhim">
+                <img src="~/Content/img/@i.Anh" alt="ảnh phim @i.GhiChu" class="film section_content-img">
+                <div class="film section_content-btn">THÔNG TIN</div>
+            </a>
+            <h4 class="film section_content-name">@i.TenPhim</h4>
+            <h4 class="film section_content-desc">@i.GhiChu</h4>
+        </div>
+    }
+

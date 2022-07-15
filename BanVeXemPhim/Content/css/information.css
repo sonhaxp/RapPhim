@@ -1,0 +1,222 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Poppins',sans-serif;
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container-info {
+    max-width: 1280px;
+    width: 100%;
+    padding: 48px;
+    display: flex;
+    margin: auto;
+}
+
+.content-info {
+    width: 70%;
+}
+
+.content-header-info {
+    display: flex;
+}
+
+.content-header_card-img-info {
+    width: 30%;
+}
+
+.content-header_img-info {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.content-header_body-info {
+    width: 70%;
+    margin-left: 28px;
+}
+
+.content-header_title-info {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.content-header_subtitle-info {
+    font-size: 28px;
+    font-weight: 400;
+    color: #aaa;
+    margin: 20px 0px;
+}
+
+.btn-buy-ticket-info {
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(242, 107, 56);
+    padding: 8px 16px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+    .btn-buy-ticket-info:hover {
+        background-color: rgba(242, 107, 56, 0.7);
+        cursor: pointer;
+    }
+
+.content-header_desc-info {
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+.content-header_desc span-info {
+    color: #aaa;
+}
+
+.content-body-info {
+    margin-top: 36px;
+}
+
+.content-body_title-info {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 0;
+    position: relative;
+}
+    .content-body_title-info::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 64px;
+        background-color: #f26b38;
+        position: absolute;
+        bottom: -2px;
+    }
+
+.content-body-desc-info {
+    font-size: 14px;
+    margin: 16px 0;
+    line-height: 1.6;
+}
+
+.movieSideBar-info {
+    width: calc(30% - 12px);
+    margin-left: 12px;
+}
+
+.movieSideBar_title-info {
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 0;
+    position: relative;
+}
+    .movieSideBar_title-info::after {
+        content: "";
+        display: block;
+        height: 2px;
+        width: 64px;
+        background-color: #f26b38;
+        position: absolute;
+        bottom: -2px;
+    }
+.movieSideBar_content-info {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.movieSideBar_card-info {
+    margin: 12px 0;
+    position: relative;
+}
+
+.movieSideBar_card-img-info {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.btn-buy-ticket--normal-info {
+    font-size: 16px;
+    color: #fff;
+    background-color: rgb(242, 107, 56);
+    padding: 12px 24px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.movieSideBar_card-wrap-info {
+    display: block;
+    position: relative;
+    margin-bottom: 12px;
+}
+
+.background-btn-info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.movieSideBar_card-wrap-info:hover .background-btn-info {
+    visibility: visible;
+    opacity: 1;
+}
+
+.movieSideBar_name-movie-info {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.movieSideBar_desc-movie-info {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    color: #aaa;
+}
+
+@media screen and (max-width: 1023px){
+
+    .content-info {
+        width: 100%;
+    }
+
+    .movieSideBar-info {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .content-header-info {
+        flex-wrap: wrap;
+    }
+
+    .content-header_card-img-info {
+        width: 100%;
+    }
+
+    .content-header_body-info {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+}
